@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
+    [SerializeField]
+    private Transform groundCheckTransform;
     public InteractableManager interactableManager;
     [SerializeField]
     private GameObject cam;
@@ -40,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
         {
             interactableManager.PickUpObject(interactHit.collider.gameObject);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            interactHit.collider.gameObject.layer = 6;
+        }
     }
 
     void FixedUpdate()
@@ -72,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(cam.transform.position, cam.transform.forward * 5, Color.red);
         Debug.DrawRay(interactHit.point, interactHit.normal * 5, Color.blue);
-        return Physics.Raycast(ray, out interactHit, interactRayDist, ~ignoreMask);
+        bool didHit = Physics.Raycast(ray, out interactHit, interactRayDist, ~ignoreMask);
+        return didHit;
     }
 }
