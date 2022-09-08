@@ -21,6 +21,13 @@ public class Pickup : MonoBehaviour
     public void Highlight()
     {
         m_Renderer.material = highlightMaterial;
-        m_Renderer.material = originalMaterial;
+        //m_Renderer.material = originalMaterial;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            Highlight();
+        }
     }
 }

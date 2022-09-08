@@ -31,7 +31,7 @@ public class InteractableManager : MonoBehaviour
         {
             PickUpObject(interactHit.collider.gameObject);
         }
-        else if (Input.GetKeyUp(KeyCode.F))
+        else if (Input.GetKeyUp(KeyCode.F) && currenthold is not null)
         {
             PutDown(currenthold);
         }
@@ -47,6 +47,11 @@ public class InteractableManager : MonoBehaviour
         Debug.DrawRay(cam.transform.position, cam.transform.forward * interactRayDist, Color.red);
         Debug.DrawRay(interactHit.point, interactHit.normal * interactRayDist, Color.blue);
         bool didHit = Physics.Raycast(ray, out interactHit, interactRayDist, ~ignoreMask);
+        if(didHit && interactHit.collider.gameObject.CompareTag("Pickup"))
+        {
+            Debug.Log("GGG");
+            interactHit.collider.gameObject.GetComponent<Pickup>().Highlight();
+        }
         return didHit;
     }
     #endregion
