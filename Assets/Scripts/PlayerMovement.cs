@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private float sensitivity = 1.0f;
     //raycast for interactions;
     private RaycastHit interactHit;
-    public GameObject hitPart;
     [SerializeField]
     private LayerMask ignoreMask;
     private float xRotation = 0f;

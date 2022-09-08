@@ -11,8 +11,6 @@ public class InteractableManager : MonoBehaviour
     private LayerMask pickupMask;
     [SerializeField]
     private SortingLayer pickupLayer;
-    [SerializeField]
-    private SortingLayer defaultLayer;
     private GameObject currenthold;
     public bool isHolding = false;
     private RaycastHit interactHit = new RaycastHit();
@@ -29,7 +27,6 @@ public class InteractableManager : MonoBehaviour
     #region Input
     private void Update()
     {
-        
         if (Input.GetKeyUp(KeyCode.F) && canPickup)
         {
             PickUpObject(interactHit.collider.gameObject);
@@ -38,21 +35,11 @@ public class InteractableManager : MonoBehaviour
         {
             PutDown(currenthold);
         }
-
-        if(interactHit.collider != null)
-        {
-            ChangeMaterial(interactMaterial);
-        }
-        else if(interactHit.collider == null)
-        {
-            lastHit.GetComponent<MeshRenderer>().material = oldMaterial;
-        }
     }
 
     private void FixedUpdate()
     {
         canPickup = CheckIfInteractable();
-        Debug.Log(interactHit.collider.gameObject.name);
     }
     bool CheckIfInteractable()
     {
@@ -60,7 +47,6 @@ public class InteractableManager : MonoBehaviour
         Debug.DrawRay(cam.transform.position, cam.transform.forward * interactRayDist, Color.red);
         Debug.DrawRay(interactHit.point, interactHit.normal * interactRayDist, Color.blue);
         bool didHit = Physics.Raycast(ray, out interactHit, interactRayDist, ~ignoreMask);
-        lastHit = interactHit.collider.gameObject;
         return didHit;
     }
     #endregion
@@ -111,12 +97,4 @@ public class InteractableManager : MonoBehaviour
     }
     #endregion
 
-    #region highlight interactables
-    void ChangeMaterial(Material mat)
-    {
-        MeshRenderer collidedMeshRenderer = interactHit.collider.gameObject.GetComponent<MeshRenderer>();
-        if (oldMaterial == null) oldMaterial = collidedMeshRenderer.material;
-        collidedMeshRenderer.material = mat;
-    }
-    #endregion
 }
