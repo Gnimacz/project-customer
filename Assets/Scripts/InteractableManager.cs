@@ -87,10 +87,20 @@ public class InteractableManager : MonoBehaviour
         currenthold.GetComponent<Collider>().enabled = true;
         currenthold.layer = 0;
         currenthold.transform.parent = null;
+        if (canPickup)
+        {
+            currenthold.transform.position = interactHit.point;
+        }
         Ray floorRay = new Ray(currenthold.transform.position, Vector3.down);
-        RaycastHit floorHit;
-        Physics.Raycast(floorRay, out floorHit, Mathf.Infinity, ~ignoreMask);
-        currenthold.transform.position = floorHit.point;
+        RaycastHit floorHit = new RaycastHit();
+        if (interactHit.normal != Vector3.up)
+        {
+            Physics.Raycast(floorRay, out floorHit, Mathf.Infinity, ~ignoreMask);
+            currenthold.transform.position = floorHit.point;
+
+        }
+
+
         currenthold.transform.rotation = Quaternion.Euler(floorHit.normal.x, currenthold.transform.rotation.y, floorHit.normal.z);
         currenthold = null;
         isHolding = false;
