@@ -13,24 +13,35 @@ public class DialogManager : MonoBehaviour
         if (displayDialog)
         {
             GUI.skin = layout;
-            GUI.Box(new Rect(Screen.width / 4, Screen.height - 90, Screen.width/2, Screen.height/4), "");
-            GUI.Label(new Rect(Screen.width/4 + Screen.width*0.02f, Screen.height - 90, Screen.width/2.2f, 90), displayedDialog);
+            GUI.Box(new Rect(Screen.width / 4, Screen.height - 90, Screen.width / 2, Screen.height / 4), "");
+            GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.02f, Screen.height - 90, Screen.width / 2.2f, 90), displayedDialog);
         }
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        displayedDialog = "";
-        StartCoroutine(DisplayDialog(dialog));
-        displayDialog = true;
+        if (!displayDialog)
+        {
+            displayedDialog = "";
+            StartCoroutine(DisplayDialog(dialog));
+            displayDialog = true;
+        }
     }
 
-    IEnumerator DisplayDialog(string dialog)
+    public IEnumerator DisplayDialog(string dialog)
     {
+        displayDialog = true;
         foreach (char letter in dialog)
         {
-            displayedDialog = displayedDialog+ letter;
-            yield return new WaitForSeconds(0.03f);
+            if (letter == '^')
+            {
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                displayedDialog = displayedDialog + letter;
+                yield return new WaitForSeconds(0.03f);
+            }
         }
         yield return new WaitForSeconds(5f);
         displayDialog = false;

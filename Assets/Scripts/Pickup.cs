@@ -4,30 +4,16 @@ using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(Mesh))]
-[RequireComponent(typeof(MeshCollider))]
+[RequireComponent(typeof(Collider))]
 public class Pickup : MonoBehaviour
 {
-    MeshRenderer m_Renderer;
-    public string description;
-    [SerializeField] Material highlightMaterial;
-    Material originalMaterial;
+    [TextArea] public string displayText;
 
-    private void Start()
+    public void OnPickup()
     {
-        m_Renderer = GetComponent<MeshRenderer>();
-        originalMaterial = m_Renderer.material;
-    }
 
-    public void Highlight()
-    {
-        m_Renderer.material = highlightMaterial;
-        //m_Renderer.material = originalMaterial;
     }
-    private void Update()
+    public void OnDrop()
     {
-        if (Input.GetKeyUp(KeyCode.V))
-        {
-            Highlight();
-        }
     }
 }

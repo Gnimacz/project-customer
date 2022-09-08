@@ -289,10 +289,15 @@ MonoBehaviour:
   pickupMask:
     serializedVersion: 2
     m_Bits: 64
-  isHolding: 0
   cam: {fileID: 5919621191429568738}
   interactRayDist: 3
   interactMaterial: {fileID: 2100000, guid: a2dea3776f46503449d03125b7293221, type: 2}
+  ignoreMask:
+    serializedVersion: 2
+    m_Bits: 8
+  isHolding: 0
+  oldMaterial: {fileID: 0}
+  highLightMaterial: {fileID: 2100000, guid: 6e1af35297de0ba40bc7aafa2366da72, type: 2}
 --- !u!1 &5919621191429568736
 GameObject:
   m_ObjectHideFlags: 0

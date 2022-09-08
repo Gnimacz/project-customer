@@ -4,34 +4,30 @@ using UnityEngine;
 
 public class InteractableManager : MonoBehaviour
 {
-    [SerializeField]
-    private Transform attachpoint;
-    private LayerMask ignoreMask;
-    [SerializeField]
-    private LayerMask pickupMask;
-    [SerializeField]
-    private SortingLayer pickupLayer;
+    [SerializeField] private Transform attachpoint;
+    [SerializeField] private LayerMask pickupMask;
+    [SerializeField] private SortingLayer pickupLayer;
+    [SerializeField] private Camera cam;
+    [SerializeField] private float interactRayDist = 5f;
+    [SerializeField] private LayerMask ignoreMask;
     private GameObject currenthold;
     public bool isHolding = false;
     private RaycastHit interactHit = new RaycastHit();
-    [SerializeField]
-    private Camera cam;
-    [SerializeField]
-    private float interactRayDist = 5f;
-    [SerializeField]
-    private Material interactMaterial;
-    Material oldMaterial;
-    private bool canPickup = false;
-    private GameObject lastHit;
 
-    #region Input
+    [SerializeField] Material oldMaterial;
+    [SerializeField] Material highLightMaterial;
+    private Transform selectedObject;
+    private bool canPickup = false;
+
+    #region Input and Detection
     private void Update()
     {
+        HandleSelection();
         if (Input.GetKeyUp(KeyCode.F) && canPickup)
         {
             PickUpObject(interactHit.collider.gameObject);
         }
-        else if (Input.GetKeyUp(KeyCode.F) && currenthold is not null)
+        else if (Input.GetKeyUp(KeyCode.F) && currenthold != null)
         {
             PutDown(currenthold);
         }
@@ -47,11 +43,6 @@ public class InteractableManager : MonoBehaviour
         Debug.DrawRay(cam.transform.position, cam.transform.forward * interactRayDist, Color.red);
         Debug.DrawRay(interactHit.point, interactHit.normal * interactRayDist, Color.blue);
         bool didHit = Physics.Raycast(ray, out interactHit, interactRayDist, ~ignoreMask);
-        if(didHit && interactHit.collider.gameObject.CompareTag("Pickup"))
-        {
-            Debug.Log("GGG");
-            interactHit.collider.gameObject.GetComponent<Pickup>().Highlight();
-        }
         return didHit;
     }
     #endregion
@@ -112,4 +103,34 @@ public class InteractableManager : MonoBehaviour
     }
     #endregion
 
+    #region Highlight selected object
+    void HandleSelection()
+    {
+        if (selectedObject != null )
+        {
+            var selectionRenderer = selectedObject.GetComponent<Renderer>();
+            selectionRenderer.material = oldMaterial;
+            selectedObject = null;
+        }
+
+        if (canPickup)
+        {
+            var selection = interactHit.transform;
+            if (selection.CompareTag("Pickup"))
+            {
+                var selectionRenderer = selection.GetComponent<Renderer>();
+                if (selectionRenderer != null)
+                {
+                    if (oldMaterial == null || (oldMaterial != selectionRenderer.material && oldMaterial != highLightMaterial))
+                    {
+                        oldMaterial = selectionRenderer.material;
+                    }
+                    selectionRenderer.material = highLightMaterial;
+                }
+
+                selectedObject = selection;
+            }
+        }
+    }
+    #endregion
 }
