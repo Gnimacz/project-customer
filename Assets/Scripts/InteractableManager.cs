@@ -15,8 +15,57 @@ public class InteractableManager : MonoBehaviour
     private SortingLayer defaultLayer;
     private GameObject currenthold;
     public bool isHolding = false;
+    private RaycastHit interactHit = new RaycastHit();
+    [SerializeField]
+    private Camera cam;
+    [SerializeField]
+    private float interactRayDist = 5f;
+    [SerializeField]
+    private Material interactMaterial;
+    Material oldMaterial;
+    private bool canPickup = false;
+    private GameObject lastHit;
 
+    #region Input
+    private void Update()
+    {
+        
+        if (Input.GetKeyUp(KeyCode.F) && canPickup)
+        {
+            PickUpObject(interactHit.collider.gameObject);
+        }
+        else if (Input.GetKeyUp(KeyCode.F))
+        {
+            PutDown(currenthold);
+        }
 
+        if(interactHit.collider != null)
+        {
+            ChangeMaterial(interactMaterial);
+        }
+        else if(interactHit.collider == null)
+        {
+            lastHit.GetComponent<MeshRenderer>().material = oldMaterial;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        canPickup = CheckIfInteractable();
+        Debug.Log(interactHit.collider.gameObject.name);
+    }
+    bool CheckIfInteractable()
+    {
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        Debug.DrawRay(cam.transform.position, cam.transform.forward * interactRayDist, Color.red);
+        Debug.DrawRay(interactHit.point, interactHit.normal * interactRayDist, Color.blue);
+        bool didHit = Physics.Raycast(ray, out interactHit, interactRayDist, ~ignoreMask);
+        lastHit = interactHit.collider.gameObject;
+        return didHit;
+    }
+    #endregion
+
+    #region Pick up and Put down objects
     public void PickUpObject(GameObject pickup)
     {
         if (!pickup.CompareTag("Pickup") && isHolding)
@@ -30,24 +79,10 @@ public class InteractableManager : MonoBehaviour
         }
         else if (pickup.CompareTag("Pickup") && isHolding)
         {
-            //currenthold.GetComponent<Collider>().enabled = true;
-            //currenthold.layer = 0;
-            //currenthold.transform.parent = null;
-            //Ray floorRay = new Ray(currenthold.transform.position, Vector3.down);
-            //RaycastHit floorHit;
-            //Physics.Raycast(floorRay, out floorHit, Mathf.Infinity, ~ignoreMask);
-            //currenthold.transform.position = floorHit.point;
-            //currenthold.transform.rotation = Quaternion.Euler(floorHit.normal.x, currenthold.transform.rotation.y, floorHit.normal.z);
+
             PutDown(pickup);
             PickUp(pickup);
 
-            //currenthold = pickup;
-            //pickup.layer = 6;
-            //pickup.GetComponent<Collider>().enabled = false;
-            //Vector3.Lerp(pickup.transform.position, attachpoint.transform.position, 1 * Time.deltaTime);
-            //pickup.transform.parent = attachpoint;
-            //pickup.transform.position = attachpoint.transform.position;
-            //pickup.transform.rotation = attachpoint.transform.rotation;
         }
     }
 
@@ -57,7 +92,6 @@ public class InteractableManager : MonoBehaviour
         isHolding = true;
         obj.layer = 6;
         obj.GetComponent<Collider>().enabled = false;
-        //Vector3.Lerp(pickup.transform.position, attachpoint.transform.position, 0.2 * Time.deltaTime);
         obj.transform.parent = attachpoint;
         obj.transform.position = attachpoint.transform.position;
         obj.transform.rotation = attachpoint.transform.rotation;
@@ -75,13 +109,14 @@ public class InteractableManager : MonoBehaviour
         currenthold = null;
         isHolding = false;
     }
-    //void FixedUpdate()
-    //{
-    //    Spring();
-    //}
+    #endregion
 
-    //void Spring()
-    //{
-
-    //}
+    #region highlight interactables
+    void ChangeMaterial(Material mat)
+    {
+        MeshRenderer collidedMeshRenderer = interactHit.collider.gameObject.GetComponent<MeshRenderer>();
+        if (oldMaterial == null) oldMaterial = collidedMeshRenderer.material;
+        collidedMeshRenderer.material = mat;
+    }
+    #endregion
 }

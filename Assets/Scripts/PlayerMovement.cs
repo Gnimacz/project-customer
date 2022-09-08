@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings")]
     [SerializeField]
     private bool inverted = false;
-    [SerializeField, Range(0.0f, 10.0f)] private float interactRayDist = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,10 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         PlayerRotation();
-        if (Input.GetKeyUp(KeyCode.F) && CheckIfInteractable())
-        {
-            interactableManager.PickUpObject(interactHit.collider.gameObject);
-        }
+
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -52,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         PlayerControls();
-        CheckIfInteractable();
     }
 
     void PlayerControls()
@@ -72,14 +67,5 @@ public class PlayerMovement : MonoBehaviour
         xRotation += inverted? mouseY : -mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90);
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-    }
-
-    bool CheckIfInteractable()
-    {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        Debug.DrawRay(cam.transform.position, cam.transform.forward * 5, Color.red);
-        Debug.DrawRay(interactHit.point, interactHit.normal * 5, Color.blue);
-        bool didHit = Physics.Raycast(ray, out interactHit, interactRayDist, ~ignoreMask);
-        return didHit;
     }
 }
