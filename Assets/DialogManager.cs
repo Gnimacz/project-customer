@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
-    public string dialog = "The fitness gram pacer test is a multi-stage acrobatics test that gets harder as it progresses..";
+    public string dialog = "The fitness gram pacer test is a multi-stage capacity test that gets harder as it progresses..";
     private string displayedDialog = "......";
     private bool displayDialog = false;
+    [SerializeField] private GUISkin layout;
     private void OnGUI()
     {
         if (displayDialog)
         {
-            GUI.Box(new Rect(Screen.width / 2 - 150, Screen.height - 90, 300, 80), "");
-            GUI.Label(new Rect(Screen.width/2 - 100, Screen.height - 90, 210, 90), displayedDialog);
+            GUI.skin = layout;
+            GUI.Box(new Rect(Screen.width / 4, Screen.height - 90, Screen.width/2, Screen.height/4), "");
+            GUI.Label(new Rect(Screen.width/4 + Screen.width*0.02f, Screen.height - 90, Screen.width/2.2f, 90), displayedDialog);
         }
     }
 

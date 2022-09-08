@@ -743,6 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: The fitness gram pacer test is a multi-stage acrobatics test that gets
     harder as it progresses..
+  layout: {fileID: 11400000, guid: a770075678a740b4a825b451086018a8, type: 2}
 --- !u!33 &1588882413
 MeshFilter:
   m_ObjectHideFlags: 0
