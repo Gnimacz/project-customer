@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
-    public string dialog = "The fitness gram pacer test is a multi-stage capacity test that gets harder as it progresses..";
+    public string dialog = "me when the when the me and i when the";
     private string displayedDialog = "......";
     private bool displayDialog = false;
+    private float test = 0f;
     [SerializeField] private GUISkin layout;
     private void OnGUI()
     {
