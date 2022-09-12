@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
-    public string dialog = "me when the when the me and i when the";
-    private string displayedDialog = "......";
+    [TextArea] public List<string> dialogList = new List<string>();
+    private string dialog = $"[NO DIALOG FOUND]";
+    private string displayedDialog = "";
     private bool displayDialog = false;
-    private float test = 0f;
     [SerializeField] private GUISkin layout;
+    private int dialogAmount = 0;
+    private int dialogProgress = 0;
+    [SerializeField] private float characterdelay = 0.03f;
+    [SerializeField] private float dialogdelay = 5f;
+    [SerializeField] private int repeatTimes = 1;
+
+    private void Start()
+    {
+        dialogAmount = dialogList.Count;
+    }
+
     private void OnGUI()
     {
         if (displayDialog)
@@ -19,18 +30,18 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
+    public void StartDialog()
     {
+        string dialog = dialogList[dialogProgress];
         if (!displayDialog)
         {
-            displayedDialog = "";
             StartCoroutine(DisplayDialog(dialog));
-            displayDialog = true;
         }
     }
 
-    public IEnumerator DisplayDialog(string dialog)
+    private IEnumerator DisplayDialog(string dialog)
     {
+        displayedDialog = "";
         displayDialog = true;
         foreach (char letter in dialog)
         {
@@ -41,10 +52,20 @@ public class DialogManager : MonoBehaviour
             else
             {
                 displayedDialog = displayedDialog + letter;
-                yield return new WaitForSeconds(0.03f);
+                yield return new WaitForSeconds(characterdelay);
             }
         }
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(dialogdelay);
+        if (dialogAmount > 0 && repeatTimes > 0) 
+        { 
+            dialogAmount--; 
+            repeatTimes--;
+        }
+
+        if (dialogAmount >= 1)
+        {
+            dialogProgress++;
+        }
         displayDialog = false;
     }
 }

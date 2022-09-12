@@ -31,6 +31,7 @@ public class InteractableManager : MonoBehaviour
         {
             PutDown(currenthold);
         }
+
     }
 
     private void FixedUpdate()
@@ -77,6 +78,7 @@ public class InteractableManager : MonoBehaviour
         obj.transform.parent = attachpoint;
         obj.transform.position = attachpoint.transform.position;
         obj.transform.rotation = attachpoint.transform.rotation;
+        obj.GetComponent<Pickup>()?.OnPickup();
     }
     void PutDown(GameObject obj)
     {
@@ -133,4 +135,5 @@ public class InteractableManager : MonoBehaviour
         }
     }
     #endregion
+
 }
