@@ -32,11 +32,9 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog()
     {
+        StopAllCoroutines();
         string dialog = dialogList[dialogProgress];
-        if (!displayDialog)
-        {
-            StartCoroutine(DisplayDialog(dialog));
-        }
+        if (repeatTimes > 0) StartCoroutine(DisplayDialog(dialog));
     }
 
     private IEnumerator DisplayDialog(string dialog)
@@ -56,9 +54,9 @@ public class DialogManager : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(dialogdelay);
-        if (dialogAmount > 0 && repeatTimes > 0) 
-        { 
-            dialogAmount--; 
+        if (dialogAmount > 0 && repeatTimes > 0)
+        {
+            dialogAmount--;
             repeatTimes--;
         }
 
