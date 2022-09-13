@@ -1,23 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogManager : MonoBehaviour
 {
-    [TextArea] public List<string> dialogList = new List<string>();
-    private string dialog = $"[NO DIALOG FOUND]";
-    private string displayedDialog = "";
-    private bool displayDialog = false;
+    public string dialogueName;
+    public string dialogueText;
+    private Queue<string> sentences;
+    public UnityEvent DialogueOpened;
+    public UnityEvent DialogueClosed;
+
+    private bool displayDialog = true;
     [SerializeField] private GUISkin layout;
-    private int dialogAmount = 0;
-    private int dialogProgress = 0;
     [SerializeField] private float characterdelay = 0.03f;
-    [SerializeField] private float dialogdelay = 5f;
-    [SerializeField] private int repeatTimes = 1;
+
+    public static DialogManager Dialoguemanager { get; private set; }
+
+    void Awake()
+    {
+        if (Dialoguemanager != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Dialoguemanager = this;
+        }
+    }
 
     private void Start()
     {
-        dialogAmount = dialogList.Count;
+        sentences = new Queue<string>();
+        DialogueOpened.AddListener(OnOpen);
+        DialogueClosed.AddListener(OnClose);
     }
 
     private void OnGUI()
@@ -26,44 +42,73 @@ public class DialogManager : MonoBehaviour
         {
             GUI.skin = layout;
             GUI.Box(new Rect(Screen.width / 4, Screen.height - 90, Screen.width / 2, Screen.height / 4), "");
-            GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.02f, Screen.height - 90, Screen.width / 2.2f, 90), displayedDialog);
+            GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.02f, Screen.height - 90, Screen.width / 2.2f, 90), dialogueText);
+            GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.00f, Screen.height - 115, Screen.width / 2.2f, 90), dialogueName);
+
+            if (GUI.Button(new Rect(Screen.width / 4 + Screen.width * 0.42f, Screen.height - 50, Screen.width / 6f, Screen.height - Screen.height * 0.0002f), "Continue"))
+            {
+                DisplayNextSentence();
+            }
         }
     }
 
-    public void StartDialog()
+    public void StartDialogue(Dialogue dialogue)
     {
-        StopAllCoroutines();
-        string dialog = dialogList[dialogProgress];
-        if (repeatTimes > 0) StartCoroutine(DisplayDialog(dialog));
+        //change this to work with the actual UI system instead of IMGUI
+        dialogueName = dialogue.name;
+        sentences.Clear();
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        DisplayNextSentence();
     }
 
-    private IEnumerator DisplayDialog(string dialog)
+    public void DisplayNextSentence()
     {
-        displayedDialog = "";
+        if (sentences.Count == 0)
+        {
+            EndDialogue();
+            Debug.Log("No Sentences found in dialogue");
+            return;
+        }
+        DialogueOpened.Invoke();
         displayDialog = true;
-        foreach (char letter in dialog)
-        {
-            if (letter == '^')
-            {
-                yield return new WaitForSeconds(1);
-            }
-            else
-            {
-                displayedDialog = displayedDialog + letter;
-                yield return new WaitForSeconds(characterdelay);
-            }
-        }
-        yield return new WaitForSeconds(dialogdelay);
-        if (dialogAmount > 0 && repeatTimes > 0)
-        {
-            dialogAmount--;
-            repeatTimes--;
-        }
+        string sentence = sentences.Dequeue();
+        Debug.Log(sentence);
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
 
-        if (dialogAmount >= 1)
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText = "";
+        foreach (char character in sentence)
         {
-            dialogProgress++;
+            dialogueText += character;
+            yield return new WaitForSeconds(characterdelay);
         }
+    }
+
+    void EndDialogue()
+    {
+        DialogueClosed.Invoke();
+
+    }
+
+
+    void OnOpen()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Debug.Log("A");
+    }
+
+    void OnClose()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
         displayDialog = false;
     }
+
+
 }

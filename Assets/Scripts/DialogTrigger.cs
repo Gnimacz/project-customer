@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    [SerializeField] private DialogManager manager;
 
     private void OnTriggerEnter(Collider other)
     {
-        manager.StartDialog();
+        
     }
 }

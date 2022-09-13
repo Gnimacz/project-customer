@@ -18,6 +18,7 @@ public class InteractableManager : MonoBehaviour
     [SerializeField] Material highLightMaterial;
     private Transform selectedObject;
     private bool canPickup = false;
+    public bool allowPickup = true;
 
     #region Input and Detection
     private void Update()
@@ -27,12 +28,15 @@ public class InteractableManager : MonoBehaviour
         {
             PickUpObject(interactHit.collider.gameObject);
         }
-        else if (Input.GetKeyUp(KeyCode.F) && currenthold != null)
+        else if (Input.GetKeyUp(KeyCode.F) && allowPickup && currenthold != null)
         {
             PutDown(currenthold);
         }
 
     }
+
+    public void PickUpAllowed() {allowPickup = true;}
+    public void PickUpBlocked() {allowPickup = false;}
 
     private void FixedUpdate()
     {
@@ -78,7 +82,7 @@ public class InteractableManager : MonoBehaviour
         obj.transform.parent = attachpoint;
         obj.transform.position = attachpoint.transform.position;
         obj.transform.rotation = attachpoint.transform.rotation;
-        obj.GetComponent<Pickup>()?.OnPickup();
+        obj.GetComponent<Interactable>()?.OnPickup();
     }
     void PutDown(GameObject obj)
     {
@@ -102,6 +106,7 @@ public class InteractableManager : MonoBehaviour
         currenthold.transform.rotation = Quaternion.Euler(floorHit.normal.x, currenthold.transform.rotation.y, floorHit.normal.z);
         currenthold = null;
         isHolding = false;
+        obj.GetComponent<Interactable>()?.OnDrop();
     }
     #endregion
 
