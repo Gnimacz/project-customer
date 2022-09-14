@@ -8,11 +8,14 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Interactable : MonoBehaviour
 {
-    public Dialogue objectDialogue;
+    public Dialogue objectDialogues;
 
 
     public UnityEvent OnInteract;
+    public DialogueEvent OnShowDialogue;
     public UnityEvent OnPutDown;
+
+    [Tooltip("Can the object be picked up?")] public bool canBePickedUp = true;
 
     public void OnPickup()
     {
@@ -21,5 +24,10 @@ public class Interactable : MonoBehaviour
     public void OnDrop()
     {
         OnPutDown.Invoke();
+    }
+
+    public void ShowDialogue()
+    {
+        DialogManager.Dialoguemanager.StartDialogue(objectDialogues);
     }
 }

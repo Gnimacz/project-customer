@@ -8,6 +8,8 @@ public class DialogManager : MonoBehaviour
     public string dialogueName;
     public string dialogueText;
     private Queue<string> sentences;
+    private Queue<string> names;
+    private Queue<DialogueSequence> dialogues;
     public UnityEvent DialogueOpened;
     public UnityEvent DialogueClosed;
 
@@ -32,6 +34,8 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         sentences = new Queue<string>();
+        names = new Queue<string>();
+        dialogues = new Queue<DialogueSequence>();
         DialogueOpened.AddListener(OnOpen);
         DialogueClosed.AddListener(OnClose);
     }
@@ -45,7 +49,7 @@ public class DialogManager : MonoBehaviour
             GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.02f, Screen.height - 90, Screen.width / 2.2f, 90), dialogueText);
             GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.00f, Screen.height - 115, Screen.width / 2.2f, 90), dialogueName);
 
-            if (GUI.Button(new Rect(Screen.width / 4 + Screen.width * 0.42f, Screen.height - 50, Screen.width / 6f, Screen.height - Screen.height * 0.0002f), "Continue"))
+            if (GUI.Button(new Rect(Screen.width/2 + 20, Screen.height - 40, 80, 20), "Continue"))
             {
                 DisplayNextSentence();
             }
@@ -54,13 +58,19 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        //change this to work with the actual UI system instead of IMGUI
-        dialogueName = dialogue.name;
-        sentences.Clear();
-        foreach (string sentence in dialogue.sentences)
+        foreach (DialogueSequence sequence in dialogue.dialogues)
         {
-            sentences.Enqueue(sentence);
+            dialogues.Enqueue(sequence);
         }
+        //change this to work with the actual UI system instead of IMGUI
+        //dialogueName = dialogue.name;
+        sentences.Clear();
+        foreach (DialogueSequence sequence in dialogues)
+        {
+            sentences.Enqueue(sequence.sentence);
+            names.Enqueue(sequence.name);
+        }
+        dialogues.Clear();
 
         DisplayNextSentence();
     }
@@ -69,13 +79,14 @@ public class DialogManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
             Debug.Log("No Sentences found in dialogue");
+            EndDialogue();
             return;
         }
         DialogueOpened.Invoke();
         displayDialog = true;
         string sentence = sentences.Dequeue();
+        dialogueName = names.Dequeue();
         Debug.Log(sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));

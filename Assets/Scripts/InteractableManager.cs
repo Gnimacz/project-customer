@@ -55,6 +55,7 @@ public class InteractableManager : MonoBehaviour
     #region Pick up and Put down objects
     public void PickUpObject(GameObject pickup)
     {
+
         if (!pickup.CompareTag("Pickup") && isHolding)
         {
             PutDown(pickup);

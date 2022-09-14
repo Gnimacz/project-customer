@@ -598,9 +598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45d25ca812a0da4eab26b978d9a5727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDialogue:
-    name: 
-    sentences: []
+  objectDialogues:
+    dialogues: []
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -616,9 +615,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnShowDialogue:
+    m_PersistentCalls:
+      m_Calls: []
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
+  canBePickedUp: 1
 --- !u!114 &860443781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7005036900781831103, guid: 9a4ed5b80d14e6c44862d62a72797b72,
@@ -843,19 +846,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45d25ca812a0da4eab26b978d9a5727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectDialogue:
-    name: Joseph
-    sentences:
-    - I'm not sure what this is
-    - Maybe if i take a nap I will remember again.^.^.
-    - aaaaaaaaaaaaaaa
-    - avadfarazedcfrsxZDCSXGFRTVBR
+  objectDialogues:
+    dialogues:
+    - name: You
+      sentence: HELLO THERE
+    - name: General Grievous
+      sentence: General Kenobi
   OnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 938086897}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: ShowDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnShowDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 938086897}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
+  canBePickedUp: 1
 --- !u!1 &1161923607
 GameObject:
   m_ObjectHideFlags: 0
