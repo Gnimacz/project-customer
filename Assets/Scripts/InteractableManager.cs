@@ -131,6 +131,7 @@ public class InteractableManager : MonoBehaviour
         }
         Ray floorRay = new Ray(currenthold.transform.position, Vector3.down);
         RaycastHit floorHit = new RaycastHit();
+        //var test = currenthold.GetComponent<Mesh>().bounds.extents;
         if (interactHit.normal != Vector3.up)
         {
             Physics.Raycast(floorRay, out floorHit, Mathf.Infinity, ~ignoreMask);

@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
     public string dialogueName;
     public string dialogueText;
+    [SerializeField] private TextMeshProUGUI dialogueTextUI;
+    [SerializeField] private TextMeshProUGUI dialogueNameUI;
+    [SerializeField] private Animator animator;
+
     private Queue<string> sentences;
     private Queue<string> names;
     private Queue<DialogueSequence> dialogues;
@@ -40,21 +45,21 @@ public class DialogManager : MonoBehaviour
         DialogueClosed.AddListener(OnClose);
     }
 
-    private void OnGUI()
-    {
-        if (displayDialog)
-        {
-            GUI.skin = layout;
-            GUI.Box(new Rect(Screen.width / 4, Screen.height - 90, Screen.width / 2, Screen.height / 4), "");
-            GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.02f, Screen.height - 90, Screen.width / 2.2f, 90), dialogueText);
-            GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.00f, Screen.height - 115, Screen.width / 2.2f, 90), dialogueName);
+    //private void OnGUI()
+    //{
+    //    if (displayDialog)
+    //    {
+    //        GUI.skin = layout;
+    //        GUI.Box(new Rect(Screen.width / 4, Screen.height - 90, Screen.width / 2, Screen.height / 4), "");
+    //        GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.02f, Screen.height - 90, Screen.width / 2.2f, 90), dialogueText);
+    //        GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.00f, Screen.height - 115, Screen.width / 2.2f, 90), dialogueName);
 
-            if (GUI.Button(new Rect(Screen.width/2 + 20, Screen.height - 40, 80, 20), "Continue"))
-            {
-                DisplayNextSentence();
-            }
-        }
-    }
+    //        if (GUI.Button(new Rect(Screen.width/2 + 20, Screen.height - 40, 80, 20), "Continue"))
+    //        {
+    //            DisplayNextSentence();
+    //        }
+    //    }
+    //}
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -85,8 +90,10 @@ public class DialogManager : MonoBehaviour
         }
         DialogueOpened.Invoke();
         displayDialog = true;
+        animator.SetBool("shouldShow", true);
         string sentence = sentences.Dequeue();
         dialogueName = names.Dequeue();
+        dialogueNameUI.text = dialogueName;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -97,6 +104,7 @@ public class DialogManager : MonoBehaviour
         foreach (char character in sentence)
         {
             dialogueText += character;
+            dialogueTextUI.text = dialogueText;
             yield return new WaitForSeconds(characterdelay);
         }
     }
@@ -117,6 +125,7 @@ public class DialogManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         displayDialog = false;
+        animator.SetBool("shouldShow", false);
     }
 
 
