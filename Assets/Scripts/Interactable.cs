@@ -10,6 +10,10 @@ public class Interactable : MonoBehaviour
 {
     public Dialogue objectDialogues;
 
+    private void Start()
+    {
+        gameObject.tag = "Interactable";
+    }
 
     public UnityEvent OnInteract;
     public DialogueEvent OnShowDialogue;

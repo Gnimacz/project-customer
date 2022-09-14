@@ -6,7 +6,7 @@ public class InteractableManager : MonoBehaviour
 {
     [SerializeField] private Transform attachpoint;
     [SerializeField] private LayerMask pickupMask;
-    [SerializeField] private SortingLayer pickupLayer;
+    [SerializeField] private string pickupTag = "Interactable";
     [SerializeField] private Camera cam;
     [SerializeField] private float interactRayDist = 5f;
     [SerializeField] private LayerMask ignoreMask;
@@ -23,20 +23,28 @@ public class InteractableManager : MonoBehaviour
     #region Input and Detection
     private void Update()
     {
+
+
         HandleSelection();
-        if (Input.GetKeyUp(KeyCode.F) && canPickup)
+        if (Input.GetKeyUp(KeyCode.F) && allowPickup)
         {
-            PickUpObject(interactHit.collider.gameObject);
+            HandleInteraction();
         }
-        else if (Input.GetKeyUp(KeyCode.F) && allowPickup && currenthold != null)
-        {
-            PutDown(currenthold);
-        }
+
+
+        //if (Input.GetKeyUp(KeyCode.F) && canPickup)
+        //{
+        //    PickUpObject(interactHit.collider.gameObject);
+        //}
+        //else if (Input.GetKeyUp(KeyCode.F) && allowPickup && currenthold != null)
+        //{
+        //    PutDown(currenthold);
+        //}
 
     }
 
-    public void PickUpAllowed() {allowPickup = true;}
-    public void PickUpBlocked() {allowPickup = false;}
+    public void PickUpAllowed() { allowPickup = true; }
+    public void PickUpBlocked() { allowPickup = false; }
 
     private void FixedUpdate()
     {
@@ -52,20 +60,48 @@ public class InteractableManager : MonoBehaviour
     }
     #endregion
 
+    #region Interaction
+    void HandleInteraction()
+    {
+        if (canPickup && interactHit.collider.gameObject != null)
+        {
+            GameObject interactable = interactHit.collider.gameObject;
+            Interactable obj = interactable.GetComponent<Interactable>();
+
+            obj?.OnPickup();
+            if (isHolding && currenthold != null)
+            {
+                PutDown(currenthold);
+            }
+            if (obj != null && obj.canBePickedUp)
+            {
+                PickUpObject(interactable);
+            }
+
+        }
+
+        else if (isHolding && currenthold != null)
+        {
+            PutDown(currenthold);
+        }
+
+    }
+    #endregion
+
     #region Pick up and Put down objects
     public void PickUpObject(GameObject pickup)
     {
 
-        if (!pickup.CompareTag("Pickup") && isHolding)
+        if (!pickup.CompareTag(pickupTag) && isHolding)
         {
             PutDown(pickup);
         }
-        if (pickup.CompareTag("Pickup") && !isHolding)
+        if (pickup.CompareTag(pickupTag) && !isHolding)
         {
             PickUp(pickup);
 
         }
-        else if (pickup.CompareTag("Pickup") && isHolding)
+        else if (pickup.CompareTag(pickupTag) && isHolding)
         {
 
             PutDown(pickup);
@@ -83,7 +119,6 @@ public class InteractableManager : MonoBehaviour
         obj.transform.parent = attachpoint;
         obj.transform.position = attachpoint.transform.position;
         obj.transform.rotation = attachpoint.transform.rotation;
-        obj.GetComponent<Interactable>()?.OnPickup();
     }
     void PutDown(GameObject obj)
     {
@@ -114,7 +149,7 @@ public class InteractableManager : MonoBehaviour
     #region Highlight selected object
     void HandleSelection()
     {
-        if (selectedObject != null )
+        if (selectedObject != null)
         {
             var selectionRenderer = selectedObject.GetComponent<Renderer>();
             selectionRenderer.material = oldMaterial;
@@ -124,7 +159,7 @@ public class InteractableManager : MonoBehaviour
         if (canPickup)
         {
             var selection = interactHit.transform;
-            if (selection.CompareTag("Pickup"))
+            if (selection.CompareTag(pickupTag))
             {
                 var selectionRenderer = selection.GetComponent<Renderer>();
                 if (selectionRenderer != null)

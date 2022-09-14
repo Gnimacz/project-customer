@@ -87,7 +87,6 @@ public class DialogManager : MonoBehaviour
         displayDialog = true;
         string sentence = sentences.Dequeue();
         dialogueName = names.Dequeue();
-        Debug.Log(sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -112,7 +111,6 @@ public class DialogManager : MonoBehaviour
     void OnOpen()
     {
         Cursor.lockState = CursorLockMode.None;
-        Debug.Log("A");
     }
 
     void OnClose()
