@@ -18,7 +18,6 @@ public class DialogManager : MonoBehaviour
     public UnityEvent DialogueOpened;
     public UnityEvent DialogueClosed;
 
-    private bool displayDialog = true;
     [SerializeField] private GUISkin layout;
     [SerializeField] private float characterdelay = 0.03f;
 
@@ -51,8 +50,6 @@ public class DialogManager : MonoBehaviour
         {
             dialogues.Enqueue(sequence);
         }
-        //change this to work with the actual UI system instead of IMGUI
-        //dialogueName = dialogue.name;
         sentences.Clear();
         foreach (DialogueSequence sequence in dialogues)
         {
@@ -73,7 +70,6 @@ public class DialogManager : MonoBehaviour
             return;
         }
         DialogueOpened.Invoke();
-        displayDialog = true;
         animator.SetBool("shouldShow", true);
         string sentence = sentences.Dequeue();
         dialogueName = names.Dequeue();
@@ -108,7 +104,6 @@ public class DialogManager : MonoBehaviour
     void OnClose()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        displayDialog = false;
         animator.SetBool("shouldShow", false);
     }
 
