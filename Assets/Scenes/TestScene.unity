@@ -602,13 +602,86 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
-  OnShowDialogue:
-    m_PersistentCalls:
-      m_Calls: []
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
   canBePickedUp: 1
+--- !u!1 &808305067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808305071}
+  - component: {fileID: 808305070}
+  - component: {fileID: 808305069}
+  - component: {fileID: 808305068}
+  m_Layer: 0
+  m_Name: StoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &808305068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808305067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a33fd9c3c8439a4da9d101fa7af8300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dia:
+    dialogues:
+    - name: You
+      sentence: TESTING
+--- !u!114 &808305069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808305067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a91aadc2c67fe64193d5dda80e4e0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyBeatsInScene: []
+--- !u!114 &808305070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808305067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085a3ee3fd309d347b97888251b0f474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storybeats: {fileID: 808305069}
+--- !u!4 &808305071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808305067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.536241, y: 2.4723654, z: -3.5226612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &860443781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7005036900781831103, guid: 9a4ed5b80d14e6c44862d62a72797b72,
@@ -670,9 +743,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnShowDialogue:
-    m_PersistentCalls:
-      m_Calls: []
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
@@ -902,21 +972,6 @@ MonoBehaviour:
       - m_Target: {fileID: 938086897}
         m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: ShowDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnShowDialogue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 938086897}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

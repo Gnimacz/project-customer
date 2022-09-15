@@ -6,6 +6,7 @@ public class StoryManager : MonoBehaviour
 {
     public static StoryManager storyManager { get; private set; }
 
+    public StoryBeatList storybeats;
 
     void Awake()
     {
