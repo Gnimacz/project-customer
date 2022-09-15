@@ -45,22 +45,6 @@ public class DialogManager : MonoBehaviour
         DialogueClosed.AddListener(OnClose);
     }
 
-    //private void OnGUI()
-    //{
-    //    if (displayDialog)
-    //    {
-    //        GUI.skin = layout;
-    //        GUI.Box(new Rect(Screen.width / 4, Screen.height - 90, Screen.width / 2, Screen.height / 4), "");
-    //        GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.02f, Screen.height - 90, Screen.width / 2.2f, 90), dialogueText);
-    //        GUI.Label(new Rect(Screen.width / 4 + Screen.width * 0.00f, Screen.height - 115, Screen.width / 2.2f, 90), dialogueName);
-
-    //        if (GUI.Button(new Rect(Screen.width/2 + 20, Screen.height - 40, 80, 20), "Continue"))
-    //        {
-    //            DisplayNextSentence();
-    //        }
-    //    }
-    //}
-
     public void StartDialogue(Dialogue dialogue)
     {
         foreach (DialogueSequence sequence in dialogue.dialogues)

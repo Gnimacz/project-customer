@@ -16,7 +16,6 @@ public class Interactable : MonoBehaviour
     }
 
     public UnityEvent OnInteract;
-    public DialogueEvent OnShowDialogue;
     public UnityEvent OnPutDown;
 
     [Tooltip("Can the object be picked up?")] public bool canBePickedUp = true;
@@ -33,5 +32,10 @@ public class Interactable : MonoBehaviour
     public void ShowDialogue()
     {
         DialogManager.Dialoguemanager.StartDialogue(objectDialogues);
+    }
+
+    public void SetScale()
+    {
+        Debug.Log("Something");
     }
 }
