@@ -36,6 +36,6 @@ public class Interactable : MonoBehaviour
 
     public void SetScale()
     {
-        StoryManager.storyManager.storybeats.FindBeatByName("Test").OnCompleteStoryBeat();
+        StoryManager.storyManager.storybeats.FindBeatByName("TestBeat").OnCompleteStoryBeat();
     }
 }

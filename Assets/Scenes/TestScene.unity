@@ -599,9 +599,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectDialogues:
     dialogues: []
+    options: []
+    optionChosen: 0
   OnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 684707463}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: SetScale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
@@ -641,6 +655,15 @@ MonoBehaviour:
     dialogues:
     - name: You
       sentence: TESTING
+    options:
+    - name: Option 1
+      sentence: 
+      dialogues:
+      - name: You
+        sentence: Man what is this?
+      - name: Your mom
+        sentence: You chose option 1 man
+    optionChosen: 0
 --- !u!114 &808305069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,7 +676,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a91aadc2c67fe64193d5dda80e4e0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyBeatsInScene: []
+  storyBeatsInScene:
+  - name: TestBeat
+    isComplete: 0
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 808305068}
+          m_TargetAssemblyTypeName: DialogTrigger, Assembly-CSharp
+          m_MethodName: TriggerDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnGetEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &808305070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,6 +771,8 @@ MonoBehaviour:
     dialogues:
     - name: olikujmhyntbgrfde
       sentence: kmjhngbfvdcsx
+    options: []
+    optionChosen: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -966,6 +1011,8 @@ MonoBehaviour:
       sentence: HELLO THERE
     - name: General Grievous
       sentence: General Kenobi
+    options: []
+    optionChosen: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:

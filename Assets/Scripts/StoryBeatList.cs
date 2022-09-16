@@ -14,7 +14,7 @@ public class StoryBeatList : MonoBehaviour
     {
         foreach (StoryBeat beat in storyBeatsInScene)
         {
-            if (beat.beatName == beatName)
+            if (beat.name == beatName)
             {
                 return beat;
             }
@@ -27,7 +27,7 @@ public class StoryBeatList : MonoBehaviour
 [System.Serializable]
 public class StoryBeat
 {
-    public string beatName;
+    public string name;
     public bool isComplete = false;
     public StoryBeat prerequisite;
     public UnityEvent OnComplete;
@@ -40,10 +40,7 @@ public class StoryBeat
 
     public void OnCompleteStoryBeat()
     {
-        if (prerequisite == null || prerequisite.isComplete)
-        {
-            OnComplete.Invoke();
-        }
+        OnComplete.Invoke();
     }
 
 }

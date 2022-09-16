@@ -6,11 +6,9 @@ using UnityEngine;
 public class Dialogue
 {
 
-    //public string name = "";
-
-    //[TextArea(3, 10)]
-    //public string[] sentences;
     public DialogueSequence[] dialogues;
+    public DialogueOption[] options;
+	public bool optionChosen = false;
 
 }
 [System.Serializable]
@@ -19,4 +17,12 @@ public class DialogueSequence
 	public string name = "";
 	[TextArea(3, 10)]
 	public string sentence;
+}
+[System.Serializable]
+public class DialogueOption
+{
+	public string name = "";
+	[TextArea(3, 10)]
+	public string sentence;
+	public DialogueSequence[] dialogues;
 }

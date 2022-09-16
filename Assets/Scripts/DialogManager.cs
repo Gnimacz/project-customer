@@ -15,10 +15,10 @@ public class DialogManager : MonoBehaviour
     private Queue<string> sentences;
     private Queue<string> names;
     private Queue<DialogueSequence> dialogues;
+    private List<DialogueSequence> options;
     public UnityEvent DialogueOpened;
     public UnityEvent DialogueClosed;
 
-    [SerializeField] private GUISkin layout;
     [SerializeField] private float characterdelay = 0.03f;
 
     public static DialogManager Dialoguemanager { get; private set; }
@@ -92,7 +92,6 @@ public class DialogManager : MonoBehaviour
     void EndDialogue()
     {
         DialogueClosed.Invoke();
-
     }
 
 
