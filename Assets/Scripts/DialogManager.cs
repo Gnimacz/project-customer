@@ -12,10 +12,11 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueNameUI;
     [SerializeField] private Animator animator;
 
+    private Dialogue workingDialogue;
     private Queue<string> sentences;
     private Queue<string> names;
     private Queue<DialogueSequence> dialogues;
-    private List<DialogueSequence> options;
+    private List<DialogueOption> options;
     public UnityEvent DialogueOpened;
     public UnityEvent DialogueClosed;
 
@@ -46,6 +47,7 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        workingDialogue = dialogue;
         foreach (DialogueSequence sequence in dialogue.dialogues)
         {
             dialogues.Enqueue(sequence);
@@ -57,6 +59,12 @@ public class DialogManager : MonoBehaviour
             names.Enqueue(sequence.name);
         }
         dialogues.Clear();
+        
+        options.Clear();
+        foreach (DialogueOption option in dialogue.options)
+        {
+            options.Add(option);
+        }
 
         DisplayNextSentence();
     }
@@ -92,6 +100,7 @@ public class DialogManager : MonoBehaviour
     void EndDialogue()
     {
         DialogueClosed.Invoke();
+        workingDialogue = null;
     }
 
 

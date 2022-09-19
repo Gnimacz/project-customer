@@ -8,7 +8,7 @@ public class Dialogue
 
     public DialogueSequence[] dialogues;
     public DialogueOption[] options;
-	public bool optionChosen = false;
+	public DialogueOption optionChosen;
 
 }
 [System.Serializable]
@@ -22,7 +22,7 @@ public class DialogueSequence
 public class DialogueOption
 {
 	public string name = "";
-	[TextArea(3, 10)]
-	public string sentence;
+	//[TextArea(3, 10)]
+	//public string sentence;
 	public DialogueSequence[] dialogues;
 }
