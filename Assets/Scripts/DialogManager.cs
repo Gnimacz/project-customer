@@ -60,11 +60,11 @@ public class DialogManager : MonoBehaviour
         }
         dialogues.Clear();
         
-        options.Clear();
-        foreach (DialogueOption option in dialogue.options)
-        {
-            options.Add(option);
-        }
+        //options.Clear();
+        //foreach (DialogueOption option in dialogue.options)
+        //{
+        //    options.Add(option);
+        //}
 
         DisplayNextSentence();
     }
