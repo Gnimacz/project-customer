@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 605feae7b5d8ad14090aaedae8abcf32
+guid: 62f11a732d7a2db4dabcbd843b28416e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Curtains
+    second: {fileID: 2100000, guid: 5d8d35921c3292648bac47fe1e1afc53, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
