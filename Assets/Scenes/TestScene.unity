@@ -516,19 +516,7 @@ MonoBehaviour:
       dialogues: []
   OnInteract:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 684707463}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: SetScale
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
@@ -544,7 +532,6 @@ GameObject:
   - component: {fileID: 808305071}
   - component: {fileID: 808305070}
   - component: {fileID: 808305069}
-  - component: {fileID: 808305068}
   m_Layer: 0
   m_Name: StoryManager
   m_TagString: Untagged
@@ -552,44 +539,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &808305068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808305067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a33fd9c3c8439a4da9d101fa7af8300, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dia:
-    dialogues:
-    - name: You
-      sentence: TESTING
-    options:
-    - name: Option 1
-      dialogues:
-      - name: You
-        sentence: Man what is this?
-      - name: Your mom
-        sentence: You chose option 1 man
-    - name: Option 2
-      dialogues:
-      - name: You
-        sentence: Man what is this?
-      - name: Your mom
-        sentence: You chose option 2 man
-    - name: Option 3
-      dialogues:
-      - name: You
-        sentence: Man what is this?
-      - name: Your mom
-        sentence: You chose option 3 man
-    optionChosen:
-      name: 
-      dialogues: []
 --- !u!114 &808305069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,7 +557,7 @@ MonoBehaviour:
     OnComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 808305068}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: DialogTrigger, Assembly-CSharp
           m_MethodName: TriggerDialogue
           m_Mode: 1
@@ -790,9 +739,19 @@ MonoBehaviour:
     dialogues:
     - name: You
       sentence: HELLO THERE
-    - name: General Grievous
-      sentence: General Kenobi
-    options: []
+    options:
+    - name: Option 1
+      dialogues:
+      - name: General grievous
+        sentence: General kenobi
+    - name: Test name
+      dialogues:
+      - name: You
+        sentence: Who is that?
+    - name: Option 3
+      dialogues:
+      - name: You
+        sentence: i forgor
     optionChosen:
       name: 
       dialogues: []

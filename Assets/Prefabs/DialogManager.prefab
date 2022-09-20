@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 5796731403240799282}
   - component: {fileID: 8230130576205708320}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Option 1 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 9121317164635244829}
   - component: {fileID: 3679928494015100003}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Option 3 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 7420243865086276424}
   - component: {fileID: 3179636011966132505}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Option 2 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1657,6 +1657,9 @@ MonoBehaviour:
   dialogueText: 
   dialogueTextUI: {fileID: 6828852199484946327}
   dialogueNameUI: {fileID: 6828852199583250425}
+  firstOptionName: {fileID: 8230130576205708320}
+  secondOptionName: {fileID: 3179636011966132505}
+  thirdOptionName: {fileID: 3679928494015100003}
   dialogueAnimator: {fileID: 6828852200856265900}
   optionsAnimator: {fileID: 4074574753662638122}
   DialogueOpened:

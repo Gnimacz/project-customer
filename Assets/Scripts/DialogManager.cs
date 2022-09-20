@@ -10,6 +10,9 @@ public class DialogManager : MonoBehaviour
     public string dialogueText;
     [SerializeField] private TextMeshProUGUI dialogueTextUI;
     [SerializeField] private TextMeshProUGUI dialogueNameUI;
+    [SerializeField] private TextMeshProUGUI firstOptionName;
+    [SerializeField] private TextMeshProUGUI secondOptionName;
+    [SerializeField] private TextMeshProUGUI thirdOptionName;
     [SerializeField] private Animator dialogueAnimator;
     [SerializeField] private Animator optionsAnimator;
 
@@ -90,6 +93,9 @@ public class DialogManager : MonoBehaviour
         if (sentences.Count == 0 && options.Count > 0)
         {
             optionsAnimator.SetBool("Show", true);
+            firstOptionName.text = options[0].name;
+            secondOptionName.text = options[1].name;
+            thirdOptionName.text = options[2].name;
             Debug.Log("Switching to options");
             return;
         }
