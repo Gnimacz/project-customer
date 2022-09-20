@@ -130,20 +130,21 @@ public class InteractableManager : MonoBehaviour
         currenthold.transform.parent = null;
         if (canPickup)
         {
-            currenthold.transform.position = interactHit.point;
+            currenthold.transform.position = interactHit.point + (new Vector3(0,currenthold.GetComponent<MeshRenderer>().bounds.extents.y,0));
         }
-        Ray floorRay = new Ray(currenthold.transform.position, Vector3.down);
+        Ray floorRay = new Ray(currenthold.transform.position, Vector3.down * 4);
         RaycastHit floorHit = new RaycastHit();
         //var test = currenthold.GetComponent<Mesh>().bounds.extents;
         if (interactHit.normal != Vector3.up)
         {
             Physics.Raycast(floorRay, out floorHit, Mathf.Infinity, ~ignoreMask);
-            currenthold.transform.position = floorHit.point + currenthold.GetComponent<MeshRenderer>().bounds.extents;
+            currenthold.transform.position = floorHit.point + (new Vector3(interactHit.normal.x * currenthold.GetComponent<MeshRenderer>().bounds.extents.x, currenthold.GetComponent<MeshRenderer>().bounds.extents.y, interactHit.normal.z * currenthold.GetComponent<MeshRenderer>().bounds.extents.z));
 
         }
 
         currenthold.transform.localScale = objectScale.transform.localScale;
-        currenthold.transform.rotation = Quaternion.Euler(floorHit.normal.x, currenthold.transform.rotation.y, floorHit.normal.z);
+        //currenthold.transform.LookAt(transform);
+        currenthold.transform.localRotation = Quaternion.Euler(0, currenthold.transform.rotation.y, 0);
         currenthold = null;
         isHolding = false;
         obj.GetComponent<Interactable>()?.OnDrop();
