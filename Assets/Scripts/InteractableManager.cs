@@ -11,6 +11,7 @@ public class InteractableManager : MonoBehaviour
     [SerializeField] private float interactRayDist = 5f;
     [SerializeField] private LayerMask ignoreMask;
     private GameObject currenthold;
+    private Transform objectScale;
     public bool isHolding = false;
     private RaycastHit interactHit = new RaycastHit();
 
@@ -113,6 +114,7 @@ public class InteractableManager : MonoBehaviour
     void PickUp(GameObject obj)
     {
         currenthold = obj;
+        objectScale = obj.transform;
         isHolding = true;
         obj.layer = 6;
         obj.GetComponent<Collider>().enabled = false;
@@ -139,7 +141,7 @@ public class InteractableManager : MonoBehaviour
 
         }
 
-
+        currenthold.transform.localScale = objectScale.transform.localScale;
         currenthold.transform.rotation = Quaternion.Euler(floorHit.normal.x, currenthold.transform.rotation.y, floorHit.normal.z);
         currenthold = null;
         isHolding = false;

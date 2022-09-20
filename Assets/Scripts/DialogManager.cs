@@ -10,7 +10,8 @@ public class DialogManager : MonoBehaviour
     public string dialogueText;
     [SerializeField] private TextMeshProUGUI dialogueTextUI;
     [SerializeField] private TextMeshProUGUI dialogueNameUI;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator dialogueAnimator;
+    [SerializeField] private Animator optionsAnimator;
 
     private Dialogue workingDialogue;
     private Queue<string> sentences;
@@ -41,6 +42,7 @@ public class DialogManager : MonoBehaviour
         sentences = new Queue<string>();
         names = new Queue<string>();
         dialogues = new Queue<DialogueSequence>();
+        options = new List<DialogueOption>();
         DialogueOpened.AddListener(OnOpen);
         DialogueClosed.AddListener(OnClose);
     }
@@ -53,24 +55,44 @@ public class DialogManager : MonoBehaviour
             dialogues.Enqueue(sequence);
         }
         sentences.Clear();
+        names.Clear();
         foreach (DialogueSequence sequence in dialogues)
         {
             sentences.Enqueue(sequence.sentence);
             names.Enqueue(sequence.name);
         }
         dialogues.Clear();
-        
-        //options.Clear();
-        //foreach (DialogueOption option in dialogue.options)
-        //{
-        //    options.Add(option);
-        //}
 
+        options.Clear();
+        if (workingDialogue.options.Length > 0)
+        {
+            foreach (DialogueOption option in dialogue.options)
+            {
+                options.Add(option);
+            }
+        }
+        Debug.Log(options);
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
+        optionsAnimator.SetBool("Show", false);
+        if (workingDialogue.optionChosen != null)
+        {
+            foreach (DialogueSequence dialogue in workingDialogue.optionChosen.dialogues)
+            {
+                names.Enqueue(dialogue.name);
+                sentences.Enqueue(dialogue.sentence);
+            }
+            //workingDialogue = null;
+        }
+        if (sentences.Count == 0 && options.Count > 0)
+        {
+            optionsAnimator.SetBool("Show", true);
+            Debug.Log("Switching to options");
+            return;
+        }
         if (sentences.Count == 0)
         {
             Debug.Log("No Sentences found in dialogue");
@@ -78,7 +100,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
         DialogueOpened.Invoke();
-        animator.SetBool("shouldShow", true);
+        dialogueAnimator.SetBool("shouldShow", true);
         string sentence = sentences.Dequeue();
         dialogueName = names.Dequeue();
         dialogueNameUI.text = dialogueName;
@@ -101,6 +123,11 @@ public class DialogManager : MonoBehaviour
     {
         DialogueClosed.Invoke();
         workingDialogue = null;
+
+        options.Clear();
+        sentences.Clear();
+        dialogues.Clear();
+        names.Clear();
     }
 
 
@@ -112,8 +139,59 @@ public class DialogManager : MonoBehaviour
     void OnClose()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        animator.SetBool("shouldShow", false);
+        dialogueAnimator.SetBool("shouldShow", false);
     }
 
+    public void Option1()
+    {
+        Debug.Log("Option 1");
+        //workingDialogue.optionChosen = options[0];
+        foreach (DialogueSequence item in options[0].dialogues)
+        {
+            dialogues.Enqueue(item);
+        }
+        foreach (DialogueSequence sequence in dialogues)
+        {
+            sentences.Enqueue(sequence.sentence);
+            names.Enqueue(sequence.name);
+        }
+        optionsAnimator.SetBool("Show", false);
+        options.Clear();
+        DisplayNextSentence();
+    }
+    public void Option2()
+    {
+        Debug.Log("Option 2");
+        //workingDialogue.optionChosen = options[1];
+        foreach (DialogueSequence item in options[1].dialogues)
+        {
+            dialogues.Enqueue(item);
+        }
+        foreach (DialogueSequence sequence in dialogues)
+        {
+            sentences.Enqueue(sequence.sentence);
+            names.Enqueue(sequence.name);
+        }
+        optionsAnimator.SetBool("Show", false);
+        options.Clear();
+        DisplayNextSentence();
+    }
+    public void Option3()
+    {
+        Debug.Log("Option 3");
+        //workingDialogue.optionChosen = options[2];
+        foreach (DialogueSequence item in options[2].dialogues)
+        {
+            dialogues.Enqueue(item);
+        }
+        foreach (DialogueSequence sequence in dialogues)
+        {
+            sentences.Enqueue(sequence.sentence);
+            names.Enqueue(sequence.name);
+        }
+        optionsAnimator.SetBool("Show", false);
+        options.Clear();
+        DisplayNextSentence();
+    }
 
 }
