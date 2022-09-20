@@ -125,6 +125,7 @@ public class InteractableManager : MonoBehaviour
     void PutDown(GameObject obj)
     {
         currenthold.GetComponent<Collider>().enabled = true;
+        currenthold.transform.rotation = Quaternion.Euler(0, currenthold.transform.rotation.y, 0);
         currenthold.layer = 0;
         currenthold.transform.parent = null;
         if (canPickup)
@@ -137,7 +138,7 @@ public class InteractableManager : MonoBehaviour
         if (interactHit.normal != Vector3.up)
         {
             Physics.Raycast(floorRay, out floorHit, Mathf.Infinity, ~ignoreMask);
-            currenthold.transform.position = floorHit.point;
+            currenthold.transform.position = floorHit.point + currenthold.GetComponent<MeshRenderer>().bounds.extents;
 
         }
 
