@@ -1515,7 +1515,7 @@ MonoBehaviour:
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
-  canBePickedUp: 1
+  canBePickedUp: 0
 --- !u!65 &356841298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5728,6 +5728,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UiScaleMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951320440805269709, guid: 9a4ed5b80d14e6c44862d62a72797b72,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951320440805269709, guid: 9a4ed5b80d14e6c44862d62a72797b72,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951320440805269709, guid: 9a4ed5b80d14e6c44862d62a72797b72,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 5919621191010962994, guid: 9a4ed5b80d14e6c44862d62a72797b72,
         type: 3}
