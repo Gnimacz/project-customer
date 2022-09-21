@@ -4407,7 +4407,7 @@ MonoBehaviour:
           to talk though, so I\u2019ll leave you be. Take care, dad! "
       - name: You
         sentence: All I wanted was some peace and quiet. Now where was I?
-    - name: NOT AN OPTION
+    - name: DONT CHOOSE
       dialogues: []
     - name: Honest
       dialogues:
