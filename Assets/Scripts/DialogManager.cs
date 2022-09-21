@@ -13,6 +13,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI firstOptionName;
     [SerializeField] private TextMeshProUGUI secondOptionName;
     [SerializeField] private TextMeshProUGUI thirdOptionName;
+    [SerializeField] private TextMeshProUGUI continueButton;
     [SerializeField] private Animator dialogueAnimator;
     [SerializeField] private Animator optionsAnimator;
 
@@ -52,6 +53,9 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        firstOptionName.transform.parent.gameObject.SetActive(false);
+        secondOptionName.transform.parent.gameObject.SetActive(false);
+        thirdOptionName.transform.parent.gameObject.SetActive(false);
         workingDialogue = dialogue;
         foreach (DialogueSequence sequence in dialogue.dialogues)
         {
@@ -80,6 +84,7 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        continueButton.transform.parent.gameObject.SetActive(true);
         optionsAnimator.SetBool("Show", false);
         if (workingDialogue.optionChosen != null)
         {
@@ -92,6 +97,7 @@ public class DialogManager : MonoBehaviour
         }
         if (sentences.Count == 0 && options.Count > 0)
         {
+            continueButton.transform.parent.gameObject.SetActive(false);
             optionsAnimator.SetBool("Show", true);
             if (workingDialogue.options.Length >= 1)
             {
