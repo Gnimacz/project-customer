@@ -223,8 +223,8 @@ RectTransform:
   m_GameObject: {fileID: 1060756647171259391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39900002, y: 0.39900002, z: 0.39900002}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7271006243819731994}
   m_Father: {fileID: 69887050354442934}
@@ -1660,6 +1660,7 @@ MonoBehaviour:
   firstOptionName: {fileID: 8230130576205708320}
   secondOptionName: {fileID: 3179636011966132505}
   thirdOptionName: {fileID: 3679928494015100003}
+  continueButton: {fileID: 6828852199728500200}
   dialogueAnimator: {fileID: 6828852200856265900}
   optionsAnimator: {fileID: 4074574753662638122}
   DialogueOpened:
