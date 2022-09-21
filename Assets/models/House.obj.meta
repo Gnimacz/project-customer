@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3ba442f4b8b51c4e806ea1c9eab9e50
+guid: cf69f979dd4ffbb4084772ccbd104e8b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: DoorFramesMat
-    second: {fileID: 2100000, guid: e4a9d247ae945884c8e6379c75ac2fc4, type: 2}
+    second: {fileID: 2100000, guid: e85419e16e14f39428750bcf4b987797, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: DoorsMat
-    second: {fileID: 2100000, guid: d8f5ec0eb30e425408cbb5546220dedc, type: 2}
+    second: {fileID: 2100000, guid: fb3a9a06c1f382d4b8bd6aafd9365ac0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: FloorAndRoofMat
-    second: {fileID: 2100000, guid: 696d8355ad1903d4aacde2b877d2683e, type: 2}
+    second: {fileID: 2100000, guid: cf7be1dc5e441f044b1961b3609668b2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WallsMat
-    second: {fileID: 2100000, guid: ce92334d5dff48440b6d52282192e90e, type: 2}
+    second: {fileID: 2100000, guid: 8a37c6d34955eb54a9304bc8c6121753, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WindowsMat
-    second: {fileID: 2100000, guid: e996f78396237e649a8bcb2799f51b3c, type: 2}
+    second: {fileID: 2100000, guid: 743bce62019987946bc7e575ba30b494, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
