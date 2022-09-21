@@ -93,9 +93,21 @@ public class DialogManager : MonoBehaviour
         if (sentences.Count == 0 && options.Count > 0)
         {
             optionsAnimator.SetBool("Show", true);
-            firstOptionName.text = options[0].name;
-            secondOptionName.text = options[1].name;
-            thirdOptionName.text = options[2].name;
+            if (workingDialogue.options.Length >= 1)
+            {
+                firstOptionName.transform.parent.gameObject.SetActive(true);
+                firstOptionName.text = options[0].name;
+            }
+            if (workingDialogue.options.Length >= 2)
+            {
+                secondOptionName.transform.parent.gameObject.SetActive(true);
+                secondOptionName.text = options[1].name;
+            }
+            if (workingDialogue.options.Length >= 3)
+            {
+                thirdOptionName.transform.parent.gameObject.SetActive(true);
+                thirdOptionName.text = options[2].name;
+            }
             Debug.Log("Switching to options");
             return;
         }
@@ -146,6 +158,9 @@ public class DialogManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         dialogueAnimator.SetBool("shouldShow", false);
+        firstOptionName.transform.parent.gameObject.SetActive(false);
+        secondOptionName.transform.parent.gameObject.SetActive(false);
+        thirdOptionName.transform.parent.gameObject.SetActive(false);
     }
 
     public void Option1()
