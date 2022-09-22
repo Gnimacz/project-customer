@@ -3419,22 +3419,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2660f1aece20f664695541cb510ca9b2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.994744
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2660f1aece20f664695541cb510ca9b2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2660f1aece20f664695541cb510ca9b2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.10239339
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2660f1aece20f664695541cb510ca9b2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2660f1aece20f664695541cb510ca9b2,
         type: 3}
@@ -3444,7 +3444,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2660f1aece20f664695541cb510ca9b2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 348.246
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2660f1aece20f664695541cb510ca9b2,
         type: 3}
@@ -12802,8 +12802,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4680254, y: 3.974674, z: 2.648147}
-  m_Center: {x: 0.026053756, y: 1.7262349, z: 0.005176621}
+  m_Size: {x: 1.2217609, y: 3.7677214, z: 2.1276536}
+  m_Center: {x: -0.09707875, y: 1.6227584, z: 0.017916651}
 --- !u!1 &1789529837
 GameObject:
   m_ObjectHideFlags: 0
@@ -13133,7 +13133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1057459322}
+      - m_Target: {fileID: 1888613868}
         m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
