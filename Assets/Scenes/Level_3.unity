@@ -273,6 +273,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Such a fun day at...Where was this?
     options: []
     optionChosen:
@@ -356,6 +357,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "No, this isn\u2019t right"
     options: []
     optionChosen:
@@ -677,7 +679,7 @@ Transform:
   - {fileID: 797519663}
   - {fileID: 786989362}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &77036486 stripped
 Transform:
@@ -1040,6 +1042,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I  haven\u2019t brushed my teeth yet today. How could I forget?"
     options: []
     optionChosen:
@@ -2464,7 +2467,7 @@ Transform:
   - {fileID: 773281307}
   - {fileID: 578710472}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356151723 stripped
 GameObject:
@@ -2565,7 +2568,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cf69f979dd4ffbb4084772ccbd104e8b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf69f979dd4ffbb4084772ccbd104e8b,
         type: 3}
@@ -2896,6 +2899,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: End level
     options: []
     optionChosen:
@@ -3214,6 +3218,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "No, this isn\u2019t right"
     options: []
     optionChosen:
@@ -3293,7 +3298,7 @@ Transform:
   - {fileID: 199520839}
   - {fileID: 149571112}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &559021428
 PrefabInstance:
@@ -3405,6 +3410,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Is that me?
     options: []
     optionChosen:
@@ -3742,7 +3748,7 @@ Transform:
   m_Children:
   - {fileID: 739683303}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &600642734
 PrefabInstance:
@@ -3979,7 +3985,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3d1423ebfb6dd5644b17e78b66e58fc1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d1423ebfb6dd5644b17e78b66e58fc1,
         type: 3}
@@ -4411,6 +4417,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "No, this isn\u2019t right"
     options: []
     optionChosen:
@@ -4622,7 +4629,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1214670779}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1214670781}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c45d25ca812a0da4eab26b978d9a5727, type: 3}
@@ -5406,33 +5413,44 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: Mom
+      voiceLine: {fileID: 8300000, guid: 2cfd82bbdb1358c40b779ac4a273c297, type: 3}
       sentence: Hello? Is everything alright? Why are you calling so early in the
         morning?
     - name: You
+      voiceLine: {fileID: 8300000, guid: 34e37e888d0ac384591c3557b6665452, type: 3}
       sentence: "Mom, I\u2019m gonna be late for school. I\u2019m really hungry and
         you didn\u2019t make me any breakfast. Where are you and dad? "
     - name: Mom
+      voiceLine: {fileID: 8300000, guid: cb7c23e0eebcffa43bf2be6857990bbb, type: 3}
       sentence: "What are you talking about? I\u2019m not your father, you\u2019re
         *my* father. Your parents have been gone for years and you\u2019re in your
         70s, you don\u2019t go to school. What\u2019s going on with you? "
     - name: You
+      voiceLine: {fileID: 8300000, guid: 2e27a2120b8f0d34a9db5d4545a9be79, type: 3}
       sentence: "Is this some kind of joke? I\u2019m not in the mood for it."
     - name: Mom
+      voiceLine: {fileID: 8300000, guid: 16723c77d8b675c48ba7576a2df9140a, type: 3}
       sentence: 'Are *you* making some kind of joke? Do you really believe what you
         are saying? '
     - name: You
+      voiceLine: {fileID: 0}
       sentence: .......................
     - name: Child
+      voiceLine: {fileID: 8300000, guid: d2f1fc0a23cc9344d9f5217c7eab38d6, type: 3}
       sentence: Dad??? Please answer me.
     - name: You
+      voiceLine: {fileID: 8300000, guid: 63f837a141d44ab44bf08586614532e0, type: 3}
       sentence: Honey, you sound worried. What happened?
     - name: Child
+      voiceLine: {fileID: 8300000, guid: 35d829d78dafbc24c850dd087c266a39, type: 3}
       sentence: That whole conversation just happened. You thought I was your mother
         up until a minute ago. You said you were late for school. Do you not remember
         any of that?
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "Now, you\u2019re just being silly. I never said any of that.  "
     - name: Child
+      voiceLine: {fileID: 8300000, guid: 9d4d5f3154a2cb645951e267b1566981, type: 3}
       sentence: "Listen, dad. You\u2019re not making any sense and it\u2019s not
         the first time I\u2019m noticing this. Be honest with me, what\u2019s going
         on?"
@@ -5440,45 +5458,61 @@ MonoBehaviour:
     - name: Honest
       dialogues:
       - name: You
+        voiceLine: {fileID: 8300000, guid: 6c2dfa21a2af119439c290f45f73f8f1, type: 3}
         sentence: Look...Things have been weird lately.
       - name: You
+        voiceLine: {fileID: 0}
         sentence: "I do things I don\u2019t remember doing. I can\u2019t seem to
           figure out who the people in the pictures are."
       - name: You
+        voiceLine: {fileID: 0}
         sentence: "I can\u2019t focus. I\u2019m just very confused. I\u2019ve chalked
           it up to old age for a while, but I think there might be more to it."
       - name: Child
+        voiceLine: {fileID: 8300000, guid: 6b73609d84609394688fcb282dfcae9a, type: 3}
         sentence: "I\u2019m going to call in sick today and come over, okay? We really
           need to talk about this and it\u2019s better if we do it face to face. "
       - name: You
+        voiceLine: {fileID: 0}
         sentence: "You don\u2019t have to bother, dear. "
       - name: Child
+        voiceLine: {fileID: 8300000, guid: 840a79827cb77f14bb33e8d79f617b81, type: 3}
         sentence: "Don\u2019t worry about it. I\u2019ll be there as fast as I can.
           In the meantime, try to relax. This must have been very tiring for you."
       - name: You
+        voiceLine: {fileID: 8300000, guid: fa174bc04e13a3d419148032213e2268, type: 3}
         sentence: I will, I will.
       - name: Child
+        voiceLine: {fileID: 8300000, guid: 3e380e5feaa3a5b41b77f3529e3aa1a4, type: 3}
         sentence: "I\u2019ll see you soon dad. I love you."
       - name: You
+        voiceLine: {fileID: 8300000, guid: a3f78bbd481fc9949bbed4108003c0ac, type: 3}
         sentence: I love you too.
       - name: You
+        voiceLine: {fileID: 0}
         sentence: "Nothing makes sense anymore. I don\u2019t know what she was talking
           about. Did I really say all that? I couldn\u2019t have."
     - name: Dissmisfull
       dialogues:
       - name: You
+        voiceLine: {fileID: 0}
         sentence: "I don\u2019t know what to tell you, dear. I feel completely fine.
           I don\u2019t understand why you would be worried about me. "
       - name: Child
+        voiceLine: {fileID: 0}
         sentence: Dad please. What is going on?
       - name: You
+        voiceLine: {fileID: 0}
         sentence: Nothing. What do you think. Come and see if you don't believe me
       - name: Child
+        voiceLine: {fileID: 0}
         sentence: OK. I will. Because you don't sound ok and I just want to make
           sure you're ok.
       - name: You
+        voiceLine: {fileID: 0}
         sentence: Ok. I will wait for you.
       - name: You
+        voiceLine: {fileID: 0}
         sentence: "Nothing makes sense anymore. I don\u2019t know what she was talking
           about. Did I really say all that? I couldn\u2019t have."
     optionChosen:
@@ -5990,6 +6024,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: No, this isn't right
     options: []
     optionChosen:
@@ -6927,6 +6962,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -6985,8 +7021,10 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "Dad! I\u2019m here!"
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Coming!
     options: []
     optionChosen:
@@ -7983,6 +8021,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -8032,7 +8071,7 @@ PrefabInstance:
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
@@ -8051,6 +8090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
+        type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 839164629}
@@ -8061,12 +8105,22 @@ PrefabInstance:
       objectReference: {fileID: 729708020}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1606020313}
+    - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
+        type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
+        type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
@@ -8081,6 +8135,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
+        type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: InteractableLock, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -8091,12 +8150,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlaySound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
+        type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
         type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825478039357385255, guid: 3ab1f5284c578cf42912470164ff0102,
+        type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5756522402347500713, guid: 3ab1f5284c578cf42912470164ff0102,
@@ -8179,6 +8248,12 @@ PrefabInstance:
 --- !u!4 &1214670780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5756522402347500726, guid: 3ab1f5284c578cf42912470164ff0102,
+    type: 3}
+  m_PrefabInstance: {fileID: 1214670779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1214670781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031743841965039509, guid: 3ab1f5284c578cf42912470164ff0102,
     type: 3}
   m_PrefabInstance: {fileID: 1214670779}
   m_PrefabAsset: {fileID: 0}
@@ -8290,9 +8365,11 @@ MonoBehaviour:
   dia:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "Oh no, I overslept! I\u2019m gonna be late for school. I hope mom
         has already made breakfast."
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "Mooom!! What\u2019s for breakfast?"
     options: []
     optionChosen:
@@ -9682,6 +9759,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "No, this isn\u2019t right"
     options: []
     optionChosen:
@@ -9936,7 +10014,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5bea3545bf22f2a40b241a8f0cb2bac7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5bea3545bf22f2a40b241a8f0cb2bac7,
         type: 3}
@@ -10050,8 +10128,10 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "Dad! I\u2019m here!"
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Coming!
     options: []
     optionChosen:
@@ -10192,7 +10272,7 @@ PrefabInstance:
     - target: {fileID: 5919621191010963001, guid: 9a4ed5b80d14e6c44862d62a72797b72,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5919621191010963001, guid: 9a4ed5b80d14e6c44862d62a72797b72,
         type: 3}
@@ -10505,6 +10585,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: End level
     options: []
     optionChosen:
@@ -10894,6 +10975,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Is that me?
     options: []
     optionChosen:
@@ -11240,12 +11322,26 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1214670779}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1214670781}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9241b40ba1d2c44cbf7837b9a74ec7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1606020313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214670781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 16934066}
+  clip: {fileID: 8300000, guid: ea0d6e8c95814bf42bcea209c3639806, type: 3}
 --- !u!1 &1610272462
 GameObject:
   m_ObjectHideFlags: 0
@@ -11300,7 +11396,7 @@ Transform:
   - {fileID: 900434250}
   - {fileID: 1881537211}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616180582 stripped
 GameObject:
@@ -11336,6 +11432,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -11478,8 +11575,10 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "Dad! I\u2019m here!"
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Coming!
     options: []
     optionChosen:
@@ -11683,6 +11782,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -12016,6 +12116,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I don\u2019t remember this..."
     options: []
     optionChosen:
@@ -12053,6 +12154,231 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.926092, y: 0.22509016, z: 4.291292}
   m_Center: {x: 0, y: 0.10916202, z: -0.0000000065065624}
+--- !u!1 &1709392764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709392767}
+  - component: {fileID: 1709392766}
+  - component: {fileID: 1709392765}
+  m_Layer: 0
+  m_Name: Beginning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1709392765
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709392764}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a82d536842d6dfc438adfb56963294da, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1709392766
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709392764}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: da1635bc910ed3e43969679644f9fa52, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1709392767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709392764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -403.273, y: 1.3010001, z: 12.283}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717076655
 GameObject:
   m_ObjectHideFlags: 0
@@ -12696,6 +13022,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -13138,7 +13465,7 @@ Transform:
   - {fileID: 839164624}
   - {fileID: 80306616}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1905582291
 PrefabInstance:
@@ -14206,6 +14533,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -14902,5 +15230,5 @@ Transform:
   - {fileID: 1028352048}
   - {fileID: 392076078}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

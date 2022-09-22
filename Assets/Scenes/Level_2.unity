@@ -7029,20 +7029,20 @@ MonoBehaviour:
       voiceLine: {fileID: 8300000, guid: 61f6f4f075a50ce48b85327d645732c6, type: 3}
       sentence: 'Hello? '
     - name: Child
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: f382e466a95d48843b986deac58729a2, type: 3}
       sentence: "Hey, dad! How are you?\_"
     - name: You
       voiceLine: {fileID: 8300000, guid: 442fd5f24cf1c434fa84a642da96aa4e, type: 3}
       sentence: "I\u2019m doing fine. Why are you calling?"
     - name: Child
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: e67c7603b575e7a47938aa1009b22e10, type: 3}
       sentence: Well, I just wanted to check up on you.
     - name: You
       voiceLine: {fileID: 8300000, guid: f98d6c0a8678f1c4db3a9dfe3ed75a4f, type: 3}
       sentence: "You interrupted my free time just for that? Well, I sure hope it
         was worth it. Now you know how I\u2019m doing. "
     - name: Child
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 612838cc438397348a56f789cd275e74, type: 3}
       sentence: "Dad, you\u2019ve been acting weird ever since I last visited. Are
         you sure you\u2019re okay? "
     options:
@@ -7053,7 +7053,7 @@ MonoBehaviour:
         sentence: "Yes. I\u2019ve told you, everything is fine. Are you calling me
           insane now? "
       - name: Child
-        voiceLine: {fileID: 0}
+        voiceLine: {fileID: 8300000, guid: 75b2ea3c2074d4148b22757b14336fdb, type: 3}
         sentence: "No, dad, I\u2019m just worried. I see you\u2019re not in the mood
           to talk though, so I\u2019ll leave you be. Take care, dad! "
       - name: You
@@ -7066,7 +7066,7 @@ MonoBehaviour:
         sentence: "Well...something has been a little off. Things have been confusing
           lately. But, don\u2019t worry about it, it\u2019s just me getting old. "
       - name: Child
-        voiceLine: {fileID: 8300000, guid: d785e38380a207448860249f089dc12c, type: 3}
+        voiceLine: {fileID: 8300000, guid: da689f5e90cbd414cbdbc029033fcba2, type: 3}
         sentence: 'Well, if you say so, I trust you. I really have to go now, though,
           duty calls. Take care, dad! '
     optionChosen:
