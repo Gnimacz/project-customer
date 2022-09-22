@@ -891,15 +891,24 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 8300000, guid: f2f73bc5bd6bd01469ee2aeb2b44564a, type: 3}
       sentence: HELLO THERE
     options:
     - name: Option 1
       dialogues:
       - name: General grievous
+        voiceLine: {fileID: 0}
+        sentence: General kenobi
+      - name: General grievous
+        voiceLine: {fileID: 8300000, guid: 5cd6981a973533a459458800687746fd, type: 3}
+        sentence: General kenobi
+      - name: General grievous
+        voiceLine: {fileID: 8300000, guid: 5cd6981a973533a459458800687746fd, type: 3}
         sentence: General kenobi
     - name: Test name
       dialogues:
       - name: You
+        voiceLine: {fileID: 0}
         sentence: Who is that?
     optionChosen:
       name: 
@@ -1495,6 +1504,11 @@ PrefabInstance:
     - target: {fileID: 1060756647171259391, guid: 1db58892851ef1548a931718c6115fc6,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396713544007555241, guid: 1db58892851ef1548a931718c6115fc6,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6828852199388360128, guid: 1db58892851ef1548a931718c6115fc6,

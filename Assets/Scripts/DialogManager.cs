@@ -49,6 +49,7 @@ public class DialogManager : MonoBehaviour
         names = new Queue<string>();
         dialogues = new Queue<DialogueSequence>();
         options = new List<DialogueOption>();
+        sounds = new Queue<AudioClip>();
         DialogueOpened.AddListener(OnOpen);
         DialogueClosed.AddListener(OnClose);
     }
@@ -69,6 +70,7 @@ public class DialogManager : MonoBehaviour
         {
             sentences.Enqueue(sequence.sentence);
             names.Enqueue(sequence.name);
+            sounds.Enqueue(sequence.voiceLine);
         }
         dialogues.Clear();
 
@@ -95,6 +97,8 @@ public class DialogManager : MonoBehaviour
             {
                 names.Enqueue(dialogue.name);
                 sentences.Enqueue(dialogue.sentence);
+                sounds.Enqueue(dialogue.voiceLine);
+                Debug.Log($"Sound queue: {sounds.Count}" );
             }
             //workingDialogue = null;
         }
@@ -136,6 +140,10 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        voiceSource.Stop();
+        AudioClip voiceLine = sounds.Dequeue();
+        if(voiceLine != null) voiceSource.PlayOneShot(voiceLine);
+
         dialogueText = "";
         foreach (char character in sentence)
         {
@@ -154,6 +162,7 @@ public class DialogManager : MonoBehaviour
         sentences.Clear();
         dialogues.Clear();
         names.Clear();
+        sounds.Clear();
     }
 
 
@@ -183,6 +192,7 @@ public class DialogManager : MonoBehaviour
         {
             sentences.Enqueue(sequence.sentence);
             names.Enqueue(sequence.name);
+            sounds.Enqueue(sequence.voiceLine);
         }
         optionsAnimator.SetBool("Show", false);
         options.Clear();
@@ -200,6 +210,7 @@ public class DialogManager : MonoBehaviour
         {
             sentences.Enqueue(sequence.sentence);
             names.Enqueue(sequence.name);
+            sounds.Enqueue(sequence.voiceLine);
         }
         optionsAnimator.SetBool("Show", false);
         options.Clear();
@@ -217,6 +228,7 @@ public class DialogManager : MonoBehaviour
         {
             sentences.Enqueue(sequence.sentence);
             names.Enqueue(sequence.name);
+            sounds.Enqueue(sequence.voiceLine);
         }
         optionsAnimator.SetBool("Show", false);
         options.Clear();
