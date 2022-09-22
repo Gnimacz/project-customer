@@ -8,6 +8,7 @@ public class InteractableManager : MonoBehaviour
     [SerializeField] private LayerMask pickupMask;
     [SerializeField] private string pickupTag = "Interactable";
     [SerializeField] private Camera cam;
+    [SerializeField] private TMPro.TextMeshProUGUI interactText;
     [SerializeField] private float interactRayDist = 5f;
     [SerializeField] private LayerMask ignoreMask;
     private GameObject currenthold;
@@ -31,7 +32,6 @@ public class InteractableManager : MonoBehaviour
         {
             HandleInteraction();
         }
-
 
         //if (Input.GetKeyUp(KeyCode.F) && canPickup)
         //{
@@ -130,7 +130,7 @@ public class InteractableManager : MonoBehaviour
         currenthold.transform.parent = null;
         if (canPickup)
         {
-            currenthold.transform.position = interactHit.point + (new Vector3(0,currenthold.GetComponent<MeshRenderer>().bounds.extents.y,0));
+            currenthold.transform.position = interactHit.point + (new Vector3(0, currenthold.GetComponent<MeshRenderer>().bounds.extents.y, 0));
         }
         Ray floorRay = new Ray(currenthold.transform.position, Vector3.down * 4);
         RaycastHit floorHit = new RaycastHit();
@@ -154,6 +154,7 @@ public class InteractableManager : MonoBehaviour
     #region Highlight selected object
     void HandleSelection()
     {
+        interactText.enabled = false;
         if (selectedObject != null)
         {
             var selectionRenderer = selectedObject.GetComponent<Renderer>();
@@ -177,6 +178,7 @@ public class InteractableManager : MonoBehaviour
                 }
 
                 selectedObject = selection;
+                interactText.enabled = true;
             }
         }
     }

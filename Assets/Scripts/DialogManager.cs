@@ -84,6 +84,7 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        DialogueOpened.Invoke();
         continueButton.transform.parent.gameObject.SetActive(true);
         optionsAnimator.SetBool("Show", false);
         if (workingDialogue.optionChosen != null)
@@ -123,7 +124,6 @@ public class DialogManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        DialogueOpened.Invoke();
         dialogueAnimator.SetBool("shouldShow", true);
         string sentence = sentences.Dequeue();
         dialogueName = names.Dequeue();
