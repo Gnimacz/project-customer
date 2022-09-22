@@ -5507,7 +5507,7 @@ MonoBehaviour:
       voiceLine: {fileID: 8300000, guid: 7436672b3fe63b64a8f39b745763a8a9, type: 3}
       sentence: Hello? Who is this?
     - name: Child
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 805775e19f0fdcf4c8e957af6dd78b25, type: 3}
       sentence: "Hi, dad! It\u2019s me. How\u2019s your day going? "
     - name: You
       voiceLine: {fileID: 8300000, guid: 18556a5daacfac045b12d6295632bf69, type: 3}
@@ -5520,14 +5520,14 @@ MonoBehaviour:
         sentence: I made the best omelette. I should make it for you next time you
           visit.
       - name: Child
-        voiceLine: {fileID: 0}
+        voiceLine: {fileID: 8300000, guid: f16c6497443e25b4a8e21830823182ec, type: 3}
         sentence: I would love to! I was actually thinking of coming over soon. Would
           Wednesday work for you?
       - name: You
         voiceLine: {fileID: 8300000, guid: f144fdb4597efb943981aeb8b08acccc, type: 3}
         sentence: 'Of course, I have all the time in the world. '
       - name: Child
-        voiceLine: {fileID: 0}
+        voiceLine: {fileID: 8300000, guid: cbf095931522ca94083ebb978c8e3804, type: 3}
         sentence: Haha, great then. See you soon dad!
       - name: You
         voiceLine: {fileID: 8300000, guid: 5087809644517eb4c94d792c8718cad2, type: 3}
@@ -5542,14 +5542,14 @@ MonoBehaviour:
         sentence: "I tried to make an omelette....it didn\u2019t turn out too tasty.
           Maybe next time you visit you can teach me how to make a better one? "
       - name: Child
-        voiceLine: {fileID: 0}
+        voiceLine: {fileID: 8300000, guid: f16c6497443e25b4a8e21830823182ec, type: 3}
         sentence: I would love to! I was actually thinking of coming over soon. Would
           Wednesday work for you?
       - name: You
         voiceLine: {fileID: 8300000, guid: f144fdb4597efb943981aeb8b08acccc, type: 3}
         sentence: 'Of course, I have all the time in the world. '
       - name: Child
-        voiceLine: {fileID: 0}
+        voiceLine: {fileID: 8300000, guid: cbf095931522ca94083ebb978c8e3804, type: 3}
         sentence: Haha, great then. See you soon dad!
       - name: You
         voiceLine: {fileID: 8300000, guid: 5087809644517eb4c94d792c8718cad2, type: 3}
