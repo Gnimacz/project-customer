@@ -250,7 +250,7 @@ MonoBehaviour:
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
-  canBePickedUp: 1
+  canBePickedUp: 0
 --- !u!1001 &50053306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4021,7 +4021,7 @@ MonoBehaviour:
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
-  canBePickedUp: 1
+  canBePickedUp: 0
 --- !u!1 &803001456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 61ef963fb28d6e94ea1829be15554f2a,
@@ -4808,7 +4808,19 @@ MonoBehaviour:
       dialogues: []
   OnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 892226853}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: ShowDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
@@ -6597,7 +6609,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.542
+      value: -0.451
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
@@ -6607,12 +6619,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.973
+      value: 1.853
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9230436
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
@@ -6622,7 +6634,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.38469535
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
@@ -6637,7 +6649,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -45.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe3b649497231242afa35bbc87a7191,
         type: 3}
@@ -7674,8 +7686,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.027089493, y: 0.0063252402, z: 0.024005251}
-  m_Center: {x: -0.01106187, y: 0.0008527998, z: -0.010503892}
+  m_Size: {x: 0.01516283, y: 0.0063252402, z: 0.017326497}
+  m_Center: {x: -0.005098542, y: 0.0008527998, z: -0.0071645146}
 --- !u!114 &1434767551
 MonoBehaviour:
   m_ObjectHideFlags: 0
