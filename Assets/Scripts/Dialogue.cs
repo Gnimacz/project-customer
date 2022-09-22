@@ -15,6 +15,7 @@ public class Dialogue
 public class DialogueSequence
 {
 	public string name = "";
+	public AudioClip voiceLine;
 	[TextArea(3, 10)]
 	public string sentence;
 }
@@ -22,7 +23,5 @@ public class DialogueSequence
 public class DialogueOption
 {
 	public string name = "";
-	//[TextArea(3, 10)]
-	//public string sentence;
 	public DialogueSequence[] dialogues;
 }

@@ -16,6 +16,8 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI continueButton;
     [SerializeField] private Animator dialogueAnimator;
     [SerializeField] private Animator optionsAnimator;
+    [SerializeField] private Queue<AudioClip> sounds;
+    [SerializeField] private AudioSource voiceSource;
 
     private Dialogue workingDialogue;
     private Queue<string> sentences;
