@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8965866073080d047a8f4f0cb3bc300c
+guid: 5bea3545bf22f2a40b241a8f0cb2bac7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: NewsPaper
-    second: {fileID: 2100000, guid: 4bbae95ba15e78543ba1eb30ad141060, type: 2}
+      name: hill
+    second: {fileID: 2100000, guid: f29237504c8b46c4893fe26143838086, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
