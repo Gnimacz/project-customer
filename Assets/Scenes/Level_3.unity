@@ -3431,6 +3431,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 559021432}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
@@ -3448,6 +3460,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.9365218, y: 0.2250901, z: 1.955792}
   m_Center: {x: -0.029466635, y: 0.10916225, z: 8.28915}
+--- !u!114 &559021432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559021429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 16934066}
+  clip: {fileID: 8300000, guid: 5cc50bbf1d9bb244487170e1facb6755, type: 3}
 --- !u!1001 &561795563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5489,7 +5515,7 @@ MonoBehaviour:
         voiceLine: {fileID: 8300000, guid: a3f78bbd481fc9949bbed4108003c0ac, type: 3}
         sentence: I love you too.
       - name: You
-        voiceLine: {fileID: 0}
+        voiceLine: {fileID: 8300000, guid: 152dd3bf63b75c74c991ca5f0fb8fed2, type: 3}
         sentence: "Nothing makes sense anymore. I don\u2019t know what she was talking
           about. Did I really say all that? I couldn\u2019t have."
     - name: Dissmisfull
@@ -5512,7 +5538,7 @@ MonoBehaviour:
         voiceLine: {fileID: 0}
         sentence: Ok. I will wait for you.
       - name: You
-        voiceLine: {fileID: 0}
+        voiceLine: {fileID: 8300000, guid: 152dd3bf63b75c74c991ca5f0fb8fed2, type: 3}
         sentence: "Nothing makes sense anymore. I don\u2019t know what she was talking
           about. Did I really say all that? I couldn\u2019t have."
     optionChosen:
@@ -10996,6 +11022,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1557375113}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
@@ -11013,6 +11051,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.199677, y: 0.22509, z: 3.1048791}
   m_Center: {x: -0.002185464, y: 0.109162, z: 4.5642323}
+--- !u!114 &1557375113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557375110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 16934066}
+  clip: {fileID: 8300000, guid: 5cc50bbf1d9bb244487170e1facb6755, type: 3}
 --- !u!1001 &1564093947
 PrefabInstance:
   m_ObjectHideFlags: 0
