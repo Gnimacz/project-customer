@@ -1157,6 +1157,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I\u2019m so full! I have to relax for a bit."
     options: []
     optionChosen:
@@ -4048,6 +4049,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Such beautiful memories...
     options: []
     optionChosen:
@@ -4345,6 +4347,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Such beautiful memories...
     options: []
     optionChosen:
@@ -4938,6 +4941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 796621249}
   - component: {fileID: 796621248}
+  - component: {fileID: 796621250}
   m_Layer: 0
   m_Name: Begin
   m_TagString: Untagged
@@ -5056,6 +5060,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &796621250
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796621247}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: da661296511da4643a103dd0d9e45c10, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &812894784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 62f11a732d7a2db4dabcbd843b28416e,
@@ -5404,43 +5504,58 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 8300000, guid: 7436672b3fe63b64a8f39b745763a8a9, type: 3}
       sentence: Hello? Who is this?
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "Hi, dad! It\u2019s me. How\u2019s your day going? "
     - name: You
+      voiceLine: {fileID: 8300000, guid: 18556a5daacfac045b12d6295632bf69, type: 3}
       sentence: "It\u2019s going fine, I\u2018ve just had breakfast."
     options:
     - name: Great Omellete
       dialogues:
       - name: You
+        voiceLine: {fileID: 8300000, guid: 78d7b9559f8ba094592998815d42b4b7, type: 3}
         sentence: I made the best omelette. I should make it for you next time you
           visit.
       - name: Child
+        voiceLine: {fileID: 0}
         sentence: I would love to! I was actually thinking of coming over soon. Would
           Wednesday work for you?
       - name: You
+        voiceLine: {fileID: 8300000, guid: f144fdb4597efb943981aeb8b08acccc, type: 3}
         sentence: 'Of course, I have all the time in the world. '
       - name: Child
+        voiceLine: {fileID: 0}
         sentence: Haha, great then. See you soon dad!
       - name: You
+        voiceLine: {fileID: 8300000, guid: 5087809644517eb4c94d792c8718cad2, type: 3}
         sentence: Bye dear!
       - name: You
+        voiceLine: {fileID: 8300000, guid: ddf8261ba43da2b45a4d12e86e98716a, type: 3}
         sentence: Oh, look at the time! I should head to bed.
     - name: Bad Omellete
       dialogues:
       - name: You
+        voiceLine: {fileID: 8300000, guid: 6069a47e60cb8184ca2261a3e94f43f2, type: 3}
         sentence: "I tried to make an omelette....it didn\u2019t turn out too tasty.
           Maybe next time you visit you can teach me how to make a better one? "
       - name: Child
+        voiceLine: {fileID: 0}
         sentence: I would love to! I was actually thinking of coming over soon. Would
           Wednesday work for you?
       - name: You
+        voiceLine: {fileID: 8300000, guid: f144fdb4597efb943981aeb8b08acccc, type: 3}
         sentence: 'Of course, I have all the time in the world. '
       - name: Child
+        voiceLine: {fileID: 0}
         sentence: Haha, great then. See you soon dad!
       - name: You
+        voiceLine: {fileID: 8300000, guid: 5087809644517eb4c94d792c8718cad2, type: 3}
         sentence: Bye dear!
       - name: You
+        voiceLine: {fileID: 8300000, guid: ddf8261ba43da2b45a4d12e86e98716a, type: 3}
         sentence: Oh, look at the time! I should head to bed.
     optionChosen:
       name: 
@@ -5484,18 +5599,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 839164634}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 839164633}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
@@ -5508,9 +5611,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 839164634}
+      - m_Target: {fileID: 839164632}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: StopSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5565,20 +5668,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 993579704}
   clip: {fileID: 8300000, guid: a9d80dab4144bb848856d99dbb792696, type: 3}
---- !u!114 &839164634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457410574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 1632183129}
-  clip: {fileID: 8300000, guid: 7436672b3fe63b64a8f39b745763a8a9, type: 3}
 --- !u!1001 &844909508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5954,6 +6043,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: That was a fun day
     options: []
     optionChosen:
@@ -7742,6 +7832,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Okay. Now what for that breakfast.....
     options: []
     optionChosen:
@@ -7933,6 +8024,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Oh the phone is ringing
     options: []
     optionChosen:
@@ -8388,6 +8480,7 @@ MonoBehaviour:
   dia:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: '*yawn* Oooh my stomach is growling! I need to make some breakfast.
         But first, I need to freshen up a bit.'
     options: []
@@ -9926,6 +10019,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Oh I remember that day
     options: []
     optionChosen:
@@ -10099,6 +10193,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I can\u2019t cook in my pajamas, I don\u2019t want to get them dirty."
     options: []
     optionChosen:
@@ -10507,6 +10602,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Oh. The phone is ringing
     options: []
     optionChosen:
@@ -11107,6 +11203,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: 
+      voiceLine: {fileID: 0}
       sentence: It's Locked
     options: []
     optionChosen:
@@ -11981,6 +12078,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Oh. The phone is ringing.
     options: []
     optionChosen:
@@ -13324,6 +13422,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I can\u2019t cook in my pajamas, I don\u2019t want to get them dirty."
     options: []
     optionChosen:

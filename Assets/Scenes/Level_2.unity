@@ -168,7 +168,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -273,6 +273,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Such a fun day at...Where was this?
     options: []
     optionChosen:
@@ -1338,6 +1339,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I  haven\u2019t brushed my teeth yet today. How could I forget?"
     options: []
     optionChosen:
@@ -1475,7 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 1654042964}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: bd2542b42ded96b479a2fcdc4adb0c68, type: 3}
 --- !u!1001 &219118374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2321,6 +2323,134 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &313682296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 313682297}
+  - component: {fileID: 313682298}
+  m_Layer: 0
+  m_Name: TV
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &313682297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313682296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1971743167}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &313682298
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313682296}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 5
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &323396825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1deffb321fc08dc4eacc8296d3df0322,
@@ -2746,7 +2876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 1049889255}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 2f10584caff46584495d3a44d7e030aa, type: 3}
 --- !u!1 &364504110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,6 +3476,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "Now it\u2019s time to relax"
     options: []
     optionChosen:
@@ -3506,7 +3637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 812096869}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 589861725b0f517449d5a049df33c6af, type: 3}
 --- !u!1001 &515077641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4157,17 +4288,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f2a893025a97d654d9575fb4504236ff,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 32.689793
+      value: 32.68979
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2a893025a97d654d9575fb4504236ff,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 32.689793
+      value: 32.68979
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2a893025a97d654d9575fb4504236ff,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 32.689793
+      value: 32.68979
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2a893025a97d654d9575fb4504236ff,
         type: 3}
@@ -4177,7 +4308,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f2a893025a97d654d9575fb4504236ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.5490885
+      value: -5.549088
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2a893025a97d654d9575fb4504236ff,
         type: 3}
@@ -4470,6 +4601,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I must\u2019ve dozed off. Oh, it\u2019s already afternoon and my
         daughter hasn\u2019t called yet. I hope she\u2019s alright. Better check
         up on her."
@@ -4576,7 +4708,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 590749671}
+      - m_Target: {fileID: 1971743173}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
         m_Mode: 1
@@ -4632,7 +4764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 816671439}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 8affdfeb7082f9b4ab2ef8e7756417c3, type: 3}
 --- !u!1 &633387962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7609145667655734672, guid: 9879653853d2a0441a76278de4c0d93f,
@@ -4705,6 +4837,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "Weird. I don\u2019t remember putting these here. Anyway, back to
         breakfast."
     options: []
@@ -4803,7 +4936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 712563550}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 505f6cd5ea0bad8478f75af1f5501e4b, type: 3}
 --- !u!114 &640070802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5113,6 +5246,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Such beautiful memories...
     options: []
     optionChosen:
@@ -5418,7 +5552,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5632,6 +5766,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Such beautiful memories...
     options: []
     optionChosen:
@@ -6331,7 +6466,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6593,7 +6728,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6891,36 +7026,47 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 8300000, guid: 61f6f4f075a50ce48b85327d645732c6, type: 3}
       sentence: 'Hello? '
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "Hey, dad! How are you?\_"
     - name: You
+      voiceLine: {fileID: 8300000, guid: 442fd5f24cf1c434fa84a642da96aa4e, type: 3}
       sentence: "I\u2019m doing fine. Why are you calling?"
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: Well, I just wanted to check up on you.
     - name: You
+      voiceLine: {fileID: 8300000, guid: f98d6c0a8678f1c4db3a9dfe3ed75a4f, type: 3}
       sentence: "You interrupted my free time just for that? Well, I sure hope it
         was worth it. Now you know how I\u2019m doing. "
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "Dad, you\u2019ve been acting weird ever since I last visited. Are
         you sure you\u2019re okay? "
     options:
     - name: Angry
       dialogues:
       - name: You
+        voiceLine: {fileID: 8300000, guid: aed9b9adc8c7f9041a12fef7cbf306de, type: 3}
         sentence: "Yes. I\u2019ve told you, everything is fine. Are you calling me
           insane now? "
       - name: Child
+        voiceLine: {fileID: 0}
         sentence: "No, dad, I\u2019m just worried. I see you\u2019re not in the mood
           to talk though, so I\u2019ll leave you be. Take care, dad! "
       - name: You
+        voiceLine: {fileID: 8300000, guid: d785e38380a207448860249f089dc12c, type: 3}
         sentence: All I wanted was some peace and quiet. Now where was I?
     - name: Honest
       dialogues:
       - name: You
+        voiceLine: {fileID: 8300000, guid: 272d1db5a096b1544801fb811e3d16a4, type: 3}
         sentence: "Well...something has been a little off. Things have been confusing
           lately. But, don\u2019t worry about it, it\u2019s just me getting old. "
       - name: Child
+        voiceLine: {fileID: 8300000, guid: d785e38380a207448860249f089dc12c, type: 3}
         sentence: 'Well, if you say so, I trust you. I really have to go now, though,
           duty calls. Take care, dad! '
     optionChosen:
@@ -7025,9 +7171,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 839164632}
+      - m_Target: {fileID: 839164631}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: Sound
+        m_MethodName: StopSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7074,20 +7220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 1630013294}
   clip: {fileID: 8300000, guid: 4644366335c32884ca3b2b5d237fcd71, type: 3}
---- !u!114 &839164632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457410574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 813903118}
-  clip: {fileID: 8300000, guid: 61f6f4f075a50ce48b85327d645732c6, type: 3}
 --- !u!114 &839164633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7413,6 +7545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 852961382}
   - component: {fileID: 852961381}
+  - component: {fileID: 852961383}
   m_Layer: 0
   m_Name: Begin
   m_TagString: Untagged
@@ -7531,6 +7664,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &852961383
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852961380}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: da661296511da4643a103dd0d9e45c10, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &861591077
 GameObject:
   m_ObjectHideFlags: 0
@@ -7794,6 +8023,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: That was a fun day
     options: []
     optionChosen:
@@ -8151,31 +8381,43 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 8300000, guid: a98a0072c6e694e4d9037f2aec1a23b5, type: 3}
       sentence: Hello, dear!
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: Hi? Is everything alright?
     - name: You
+      voiceLine: {fileID: 8300000, guid: 17259773f08011a44838b7b269f6883f, type: 3}
       sentence: "Are you alright? You didn\u2019t call today, so I was a bit worried."
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "What do you mean, dad? We just spoke earlier. Don\u2019t you remember? "
     - name: You
+      voiceLine: {fileID: 8300000, guid: e56251f806177a841bc610e90acea8b1, type: 3}
       sentence: "Are you sure we talked? I don\u2019t remember it...."
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "This can\u2019t be good..."
     - name: You
+      voiceLine: {fileID: 8300000, guid: 4237192fa8dc5e146b479b09f7f3c206, type: 3}
       sentence: "Oh, don\u2019t worry, dear. Your dad is just getting old. I\u2019m
         sorry I bothered you. "
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: "You never bother me, dad. Just promise me you\u2019ll take care
         and get some rest, okay? "
     - name: You
+      voiceLine: {fileID: 8300000, guid: 5bb365d5ee28a5b40813d246e29b54b4, type: 3}
       sentence: 'I promise. Goodnight, dear! '
     - name: Child
+      voiceLine: {fileID: 0}
       sentence: Goodnight!
     - name: You
+      voiceLine: {fileID: 8300000, guid: 747dbbe2026c6424e810228b2593ba83, type: 3}
       sentence: There is no way I would have forgotten her calling. She probably
         forgot and tried to cover it up, silly little one.
     - name: You
+      voiceLine: {fileID: 8300000, guid: 3e55be32e1da3e649b987c46a25671e8, type: 3}
       sentence: She was right about one think, however. I sure do need some rest.
     options: []
     optionChosen:
@@ -8232,7 +8474,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 893750625}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
         m_Mode: 1
@@ -8273,20 +8515,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 563111561}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &893750625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893750618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 813903118}
-  clip: {fileID: 8300000, guid: a98a0072c6e694e4d9037f2aec1a23b5, type: 3}
 --- !u!114 &893750626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9304,7 +9532,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9765,8 +9993,10 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Huh. My clothes are not here.
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Now where did I leave my house clothes?
     options: []
     optionChosen:
@@ -9926,6 +10156,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Oh the phone is ringing
     options: []
     optionChosen:
@@ -10081,33 +10312,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1122186843}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1122186843}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1122186839}
         m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: ShowDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1122186844}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Sound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10131,20 +10350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
---- !u!114 &1122186843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122186837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 813903118}
-  clip: {fileID: 0}
 --- !u!114 &1122186844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10158,7 +10363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 302149681}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 68239d12876bc0b47ae8cd05d09a585f, type: 3}
 --- !u!1 &1135914840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0164ad7fc0740a947a7f9c29b07cde36,
@@ -10337,9 +10542,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8affdfeb7082f9b4ab2ef8e7756417c3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10646,6 +10851,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Next day
     options: []
     optionChosen:
@@ -10735,6 +10941,7 @@ MonoBehaviour:
   dia:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Time to rise and shine.
     options: []
     optionChosen:
@@ -11831,6 +12038,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I must\u2019ve dozed off. Oh, it\u2019s already afternoon and my
         daughter hasn\u2019t called yet. I hope she\u2019s alright. Better check
         up on her."
@@ -11952,6 +12160,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1385653541}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   canBePickedUp: 1
 --- !u!65 &1385653536
 BoxCollider:
@@ -11999,7 +12219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 1228179881}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 68239d12876bc0b47ae8cd05d09a585f, type: 3}
 --- !u!1001 &1387488822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12769,6 +12989,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I can\u2019t cook in my pajamas, I don\u2019t want to get them dirty."
     options: []
     optionChosen:
@@ -12918,7 +13139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 15039884}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 589861725b0f517449d5a049df33c6af, type: 3}
 --- !u!1001 &1437691758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13299,6 +13520,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Oh. The phone is ringing
     options: []
     optionChosen:
@@ -13307,18 +13529,6 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1479639828}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1479639828}
         m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: ShowDialogue
@@ -13451,6 +13661,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 590749671}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 839164631}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
@@ -13480,20 +13702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
---- !u!114 &1479639832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479639826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 813903118}
-  clip: {fileID: 0}
 --- !u!114 &1479639833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13507,7 +13715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 1162429943}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 8affdfeb7082f9b4ab2ef8e7756417c3, type: 3}
 --- !u!1001 &1482098746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14658,6 +14866,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: Oh. The phone is ringing.
     options: []
     optionChosen:
@@ -14813,33 +15022,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1626976872}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1626976872}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: Sound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1626976867}
         m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: ShowDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1626976871}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Sound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14876,21 +15073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 1808229025}
-  clip: {fileID: 0}
---- !u!114 &1626976872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564488809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 813903118}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 68239d12876bc0b47ae8cd05d09a585f, type: 3}
 --- !u!1001 &1629122905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15319,7 +15502,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16324,6 +16507,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
+      voiceLine: {fileID: 0}
       sentence: "I must\u2019ve dozed off. Oh, it\u2019s already afternoon and my
         daughter hasn\u2019t called yet. I hope she\u2019s alright. Better check
         up on her."
@@ -16445,6 +16629,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1888613872}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   canBePickedUp: 1
 --- !u!65 &1888613867
 BoxCollider:
@@ -16492,7 +16688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 1475437152}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 68239d12876bc0b47ae8cd05d09a585f, type: 3}
 --- !u!1 &1891945542
 GameObject:
   m_ObjectHideFlags: 0
@@ -16913,6 +17109,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04230087, y: 0.027756527, z: 0.015086479}
   m_Center: {x: 0, y: -0.0000000023283064, z: 0.000000014901161}
+--- !u!114 &1971743173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971743168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191fa0e61f3bb634e88c25d28508bf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 313682298}
+  clip: {fileID: 8300000, guid: 8affdfeb7082f9b4ab2ef8e7756417c3, type: 3}
 --- !u!1 &1972959810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ba82e1dda3405494a9f475105b679e72,
@@ -18601,6 +18811,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: 
+      voiceLine: {fileID: 0}
       sentence: It's locked
     options: []
     optionChosen:
