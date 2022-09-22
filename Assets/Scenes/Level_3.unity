@@ -273,7 +273,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 11450192288427c4bbef866506ea1a1a, type: 3}
       sentence: Such a fun day at...Where was this?
     options: []
     optionChosen:
@@ -340,8 +340,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01634031, y: 0.016408673, z: 0.016340304}
-  m_Center: {x: 0.000000005830736, y: -0.0053556575, z: 6.4785954e-10}
+  m_Size: {x: 0.01961744, y: 0.031236554, z: 0.025730278}
+  m_Center: {x: -0.0016385587, y: 0.0020582848, z: -0.00080998905}
 --- !u!114 &35073379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,7 +357,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "No, this isn\u2019t right"
     options: []
     optionChosen:
@@ -3218,7 +3218,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "No, this isn\u2019t right"
     options: []
     optionChosen:
@@ -4707,7 +4707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739683302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.137, y: -0.11, z: 8.061}
+  m_LocalPosition: {x: -0.135, y: -0.11, z: 27.44}
   m_LocalScale: {x: 0.2183923, y: 0.23745404, z: 0.38539672}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6050,7 +6050,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: No, this isn't right
     options: []
     optionChosen:
@@ -6988,7 +6988,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -7012,7 +7012,7 @@ MonoBehaviour:
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
-  canBePickedUp: 1
+  canBePickedUp: 0
 --- !u!1 &1122186837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5eeacc983dd8b23468da774e262c1d14,
@@ -7047,10 +7047,10 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: Child
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 70ba24883b8f5ee4591a3342f8c33cbc, type: 3}
       sentence: "Dad! I\u2019m here!"
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 47943d54c2485cf45928f555d259e591, type: 3}
       sentence: Coming!
     options: []
     optionChosen:
@@ -8047,7 +8047,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -9785,7 +9785,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "No, this isn\u2019t right"
     options: []
     optionChosen:
@@ -10154,10 +10154,10 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: Child
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 70ba24883b8f5ee4591a3342f8c33cbc, type: 3}
       sentence: "Dad! I\u2019m here!"
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 47943d54c2485cf45928f555d259e591, type: 3}
       sentence: Coming!
     options: []
     optionChosen:
@@ -11484,7 +11484,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -11627,10 +11627,10 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: Child
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 70ba24883b8f5ee4591a3342f8c33cbc, type: 3}
       sentence: "Dad! I\u2019m here!"
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 47943d54c2485cf45928f555d259e591, type: 3}
       sentence: Coming!
     options: []
     optionChosen:
@@ -11697,6 +11697,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InteractableLock, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11834,7 +11846,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -12168,7 +12180,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: a9e95bbcb6073104799af9790040d80d, type: 3}
       sentence: "I don\u2019t remember this..."
     options: []
     optionChosen:
@@ -13074,7 +13086,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
@@ -14585,7 +14597,7 @@ MonoBehaviour:
   objectDialogues:
     dialogues:
     - name: You
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 8d0844d57415d4f4aa027b03eb77794f, type: 3}
       sentence: "I could\u2019ve sworn this wasn\u2019t here before"
     options: []
     optionChosen:
