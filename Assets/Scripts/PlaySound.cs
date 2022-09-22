@@ -15,6 +15,6 @@ public class PlaySound : MonoBehaviour
 
     public void StopSound()
     {
-        sound.Stop(clip);
+        sound.Stop();
     }
 }
