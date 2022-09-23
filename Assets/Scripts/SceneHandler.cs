@@ -15,4 +15,13 @@ public class SceneHandler : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad.name);
     }
+
+    public void LoadFirstScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void StopApp()
+    {
+        Application.Quit();
+    }
 }

@@ -3817,6 +3817,7 @@ GameObject:
   - component: {fileID: 534104988}
   - component: {fileID: 534104990}
   - component: {fileID: 534104989}
+  - component: {fileID: 534104991}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -3921,6 +3922,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &534104991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534104987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3298243bdab6c64d9b60478c3a24378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayTimeMaterial: {fileID: 2100000, guid: 2cfea80748a77ea4da929ec89efd0632, type: 2}
+  nightTimeMaterial: {fileID: 2100000, guid: 4d4a455dfb1ff6b45975d39f27181312, type: 2}
+  sun: {fileID: 534104987}
 --- !u!1 &534728999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 29b6991a908752641805ee6a5a00d53a,
@@ -4711,6 +4727,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1971743173}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 534104991}
+        m_TargetAssemblyTypeName: DayTimeController, Assembly-CSharp
+        m_MethodName: SetToNight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10177,6 +10205,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1260823409}
+        m_TargetAssemblyTypeName: FadeToBlack, Assembly-CSharp
+        m_MethodName: Fade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPutDown:
     m_PersistentCalls:
       m_Calls:
@@ -10860,18 +10900,6 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1228035013}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: ShowDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1228035022}
         m_TargetAssemblyTypeName: InteractableLock, Assembly-CSharp
         m_MethodName: Lock
@@ -10979,6 +11007,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c4e223f65e20b4d82fe30aa9495dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 1.2
+  controller: {fileID: 1260823408}
 --- !u!1 &1228179879
 GameObject:
   m_ObjectHideFlags: 0
@@ -11156,6 +11186,93 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.7864347, y: 3.1558518, z: 2.8218863}
   m_Center: {x: 0.0000009536743, y: -0.00000011920929, z: 0.021743955}
+--- !u!1001 &1260823407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -415.24014
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9126235
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.599924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097413818679301957, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404599638970762912, guid: 9224b320e660f2342b8cad0392bc7b5e,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneTransition
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9224b320e660f2342b8cad0392bc7b5e, type: 3}
+--- !u!95 &1260823408 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7635783185748116979, guid: 9224b320e660f2342b8cad0392bc7b5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1260823407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1260823409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8986668085721956969, guid: 9224b320e660f2342b8cad0392bc7b5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1260823407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d1509eb6ad18d4d9dc711453fa4b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1291360178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6e69721fa37d9584183b1651c5472f9f,
@@ -12052,6 +12169,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1385653541}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1260823409}
+        m_TargetAssemblyTypeName: FadeToBlack, Assembly-CSharp
+        m_MethodName: Fade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 534104991}
+        m_TargetAssemblyTypeName: DayTimeController, Assembly-CSharp
+        m_MethodName: SetToNight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13685,6 +13826,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1260823409}
+        m_TargetAssemblyTypeName: FadeToBlack, Assembly-CSharp
+        m_MethodName: Fade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnPutDown:
     m_PersistentCalls:
       m_Calls: []
@@ -14878,6 +15031,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1626976871}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1260823409}
+        m_TargetAssemblyTypeName: FadeToBlack, Assembly-CSharp
+        m_MethodName: Fade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16521,6 +16686,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1888613872}
         m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
         m_MethodName: Sound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1260823409}
+        m_TargetAssemblyTypeName: FadeToBlack, Assembly-CSharp
+        m_MethodName: Fade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 534104991}
+        m_TargetAssemblyTypeName: DayTimeController, Assembly-CSharp
+        m_MethodName: SetToNight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
